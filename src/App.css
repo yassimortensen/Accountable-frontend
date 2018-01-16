@@ -11,6 +11,10 @@ li {
   display: inline;
 }
 
+h1 {
+  margin: 0;
+}
+
 .Log {
   display: inline;
 }
@@ -28,6 +32,29 @@ li {
   padding: 10px;
   background-color: 'white';
   color: #5A5959;
+}
+
+.App {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-rows: 10% auto;
+}
+
+.GoalContainer {
+  display: grid;
+  grid-row: 5%;
+}
+
+.Goal {
+  display: grid;
+  grid-template-columns: 30% auto;
+}
+
+.LogContainer {
+  display: grid;
+  grid-template-columns: repeat(7, 14%) auto;
+  padding-left: 2%;
 }
 
 /*.App-logo {

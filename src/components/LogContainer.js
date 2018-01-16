@@ -15,6 +15,11 @@ class LogContainer extends Component {
     //   <Log key={index} log={log} goal={this.props.goal}/>
     // ))
 
+    //function that returns an array of the current week
+      //expect array of 7 days
+      //map over array
+      //add logic for empty days with no data
+
     const logs = this.props.goal.logs.map((log, index) => {
       if (this.props.goal.binary === true) {
         return (<LogBinary key={index} log={log}/>)
@@ -24,11 +29,9 @@ class LogContainer extends Component {
     })
 
     return (
-      <div>
-        <ul>
-          {logs}
-        </ul>
-      </div>
+      <ul className='LogContainer'>
+        {logs}
+      </ul>
     );
   }
 }

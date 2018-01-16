@@ -11,7 +11,7 @@ class Log extends Component {
     // debugger
 
     return (
-      <div className="w3-cell" style={{padding: '5%'}}>
+      <div>
         <p>{this.props.log.date}</p>
         <p>{(this.props.log.binary_input === true) ?
           <i className="material-icons">check</i>

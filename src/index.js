@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 
 import { createStore, combineReducers, applyMiddleware } from "redux";
@@ -18,7 +18,7 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 ReactDOM.render(
   <Router>
     <Provider store={store} >
-      <App store={store}/>
+      <App />
     </Provider>
   </Router>,
   document.getElementById('root'));

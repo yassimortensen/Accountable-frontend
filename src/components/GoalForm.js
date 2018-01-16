@@ -1,6 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import { postGoal } from '../actions/postGoal'
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { postGoal } from '../actions/postGoal';
 // import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 
 class GoalForm extends React.Component{
@@ -26,12 +27,11 @@ class GoalForm extends React.Component{
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.postGoal(this.state)
+    this.props.postGoal(this.state).then(() => this.props.history.push('/goals'))
   }
 
 
   render(){
-    console.log(this.state)
     return(
       <form onSubmit={this.handleSubmit}>
         Name of Goal: <input onChange={this.handleChange} type='text' name='name' value={this.state.name} /><br />
@@ -61,4 +61,4 @@ class GoalForm extends React.Component{
     )
   }
 }
-export default connect(null, {postGoal})(GoalForm)
+export default withRouter(connect(null, {postGoal})(GoalForm))

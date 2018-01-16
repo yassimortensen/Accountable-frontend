@@ -1,4 +1,4 @@
-export function postGoal(goalData) {
+export function postLog(logData) {
   // debugger
   return (dispatch) => {
     const options = {
@@ -7,12 +7,15 @@ export function postGoal(goalData) {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      body: JSON.stringify(goalData)
+      body: JSON.stringify(logData)
     }
-    return fetch('http://localhost:3000/api/v1/goals', options)
+
+    fetch('http://localhost:3000/api/v1/logs', options)
     .then(res => res.json())
     .then((goal)=>{
-      dispatch({type: "ADD_GOAL", goal: goal})
+      dispatch({type: "ADD_LOG", goal: goal})
     })
+
   }
+
 }

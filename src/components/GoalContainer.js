@@ -15,8 +15,8 @@ class GoalContainer extends Component {
       <Goal key={index} goal={goal}/>
     ))
     return (
-      <div className="Log">
-        <h1 style={{textAlign: 'left', paddingLeft: '2%', borderBottom: '1px solid lightGrey'}}>Goals</h1>
+      <div className='GoalContainer'>
+        <h1 style={{margins: '0', textAlign: 'left', paddingLeft: '2%', borderBottom: '1px solid lightGrey'}}>Goals</h1>
         {goals}
       </div>
     );

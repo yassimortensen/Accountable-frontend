@@ -28,14 +28,14 @@ class App extends Component {
     // // debugger
     console.log(this.props)
     return (
-      <div>
+      <div className='App'>
         <div className="navbar">
           <NavBar name={this.props.name}/>
         </div>
         <Switch>
           <Route exact path='/add/goal' render={() => <div><GoalForm /></div>} />
-          <Route exact path='/add/log' render={() => <div><LogForm /></div>} />
-          <Route exact path='/goals' render={() => <div><GoalContainer /></div>} />
+          <Route exact path='/goal/:id/add/log' render={() => <div><LogForm /></div>} />
+          <Route exact path='/goals' render={() => <GoalContainer />} />
         </Switch>
       </div>
     );
@@ -55,12 +55,12 @@ const mapStateToProps = ({users_reducer}) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-      getUser: getUser
-    }, dispatch)
-}
+// const mapDispatchToProps = (dispatch) => {
+//   return bindActionCreators({
+//       getUser: getUser
+//     }, dispatch)
+// }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default withRouter(connect(mapStateToProps, { getUser })(App));
 //
 // export default connect(mapStateToProps, mapDispatchToProps)(App);

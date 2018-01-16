@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 // import { bindActionCreators } from 'redux';
-import { postLog } from '../actions/postLog'
+// import { postGoal } from '../actions/postGoal'
 // import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 
 class LogForm extends React.Component{
@@ -25,18 +25,24 @@ class LogForm extends React.Component{
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.postLog(this.state)
+    // this.props.postGoal(this.state)
+  }
+
+  this.state = {
+    user_id: 1,
+    goal_id: props.selected_goal.id,
+    date: '',
+    binary_input: false,
+    amount_input: 0
   }
 
   render(){
-    // console.log(this.state)
+    console.log(this.state)
     return(
       <div>
         <h4>Goal: {this.props.selected_goal.name}</h4>
-        <p>{this.props.selected_goal.description}</p>
-        <form onSubmit={this.handleSubmit}>
-          Date: <input onChange={this.handleChange} type='date' name='date' value={this.state.date}/>
-          Amount: <input onChange={this.handleChange} name='amount_input' type='number' value={this.state.amount_input} />
+        <form>
+          Date: <input type='date' value={this.state.date}/>
           <input type='submit' />
         </form>
       </div>
@@ -56,4 +62,4 @@ const mapStateToProps = ({users_reducer}) => {
 //     }, dispatch)
 // }
 
-export default connect(mapStateToProps, { postLog })(LogForm)
+export default connect(mapStateToProps, null)(LogForm)
