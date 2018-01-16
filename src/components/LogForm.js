@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
-// import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router-dom';
 import { postLog } from '../actions/postLog'
-// import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 
 class LogForm extends React.Component{
   constructor(props){
@@ -25,7 +24,7 @@ class LogForm extends React.Component{
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.postLog(this.state)
+    this.props.postLog(this.state).then(() => this.props.history.push('/goals'))
   }
 
   render(){
@@ -56,4 +55,4 @@ const mapStateToProps = ({users_reducer}) => {
 //     }, dispatch)
 // }
 
-export default connect(mapStateToProps, { postLog })(LogForm)
+export default withRouter(connect(mapStateToProps, { postLog })(LogForm))

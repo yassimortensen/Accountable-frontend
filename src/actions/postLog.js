@@ -10,7 +10,7 @@ export function postLog(logData) {
       body: JSON.stringify(logData)
     }
 
-    fetch('http://localhost:3000/api/v1/logs', options)
+    return fetch('http://localhost:3000/api/v1/logs', options)
     .then(res => res.json())
     .then((goal)=>{
       dispatch({type: "ADD_LOG", goal: goal})

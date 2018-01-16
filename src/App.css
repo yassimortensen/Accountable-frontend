@@ -43,12 +43,12 @@ h1 {
 
 .GoalContainer {
   display: grid;
-  grid-row: 5%;
+  grid-template-rows: 10% auto;
 }
 
 .Goal {
   display: grid;
-  grid-template-columns: 30% auto;
+  grid-template-columns: 20% auto;
 }
 
 .LogContainer {

@@ -1,10 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux'
-// import { bindActionCreators } from 'redux';
-// import { postGoal } from '../actions/postGoal'
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { postLog } from '../actions/postLog';
 // import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 
-class LogForm extends React.Component{
+class LogFormBinary extends React.Component{
   constructor(props){
     super();
 
@@ -12,8 +12,8 @@ class LogForm extends React.Component{
       user_id: 1,
       goal_id: props.selected_goal.id,
       date: '',
-      binary_input: false,
-      amount_input: 0
+      binary_input: true,
+      amount_input: undefined
     }
   }
 
@@ -25,24 +25,22 @@ class LogForm extends React.Component{
 
   handleSubmit = (event) => {
     event.preventDefault()
-    // this.props.postGoal(this.state)
-  }
-
-  this.state = {
-    user_id: 1,
-    goal_id: props.selected_goal.id,
-    date: '',
-    binary_input: false,
-    amount_input: 0
+    this.props.postLog(this.state).then(() => this.props.history.push('/goals'))
   }
 
   render(){
-    console.log(this.state)
     return(
       <div>
         <h4>Goal: {this.props.selected_goal.name}</h4>
-        <form>
-          Date: <input type='date' value={this.state.date}/>
+        <p>{this.props.selected_goal.description}</p>
+        <form onSubmit={this.handleSubmit}>
+          Date: <input onChange={this.handleChange} type='date' name='date' value={this.state.date}/>
+          Did you complete your goal?
+          <select onChange={this.handleChange} name="binary_input">
+            <option value='' defaultValue></option>
+            <option value={true}>Yes</option>
+            <option value={false}>No</option>
+          </select>
           <input type='submit' />
         </form>
       </div>
@@ -62,4 +60,4 @@ const mapStateToProps = ({users_reducer}) => {
 //     }, dispatch)
 // }
 
-export default connect(mapStateToProps, null)(LogForm)
+export default withRouter(connect(mapStateToProps, { postLog })(LogFormBinary))
