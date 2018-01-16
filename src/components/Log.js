@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import '../App.css';
-import LogContainer from './LogContainer'
 
 // import { connect } from "react-redux";
 // import { getUser } from "../actions";
 // import { bindActionCreators } from 'redux';
 
-class Goal extends Component {
+class Log extends Component {
 
   render() {
     // debugger
 
     return (
       <div className="App">
-        <p>{this.props.goal.name}</p>
-        <LogContainer goal={this.props.goal}/>
+        <p>{this.props.log.date}</p>
+        <p>{this.props.log.amount_input} {this.props.unit}</p>
       </div>
     );
   }
@@ -32,4 +31,4 @@ class Goal extends Component {
 //     }, dispatch)
 // }
 
-export default Goal;
+export default Log;

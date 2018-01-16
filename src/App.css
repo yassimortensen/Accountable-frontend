@@ -22,6 +22,28 @@
   font-size: large;
 }
 
+ul {
+    list-style-type: none;
+    /*text-align: right !important;*/
+    margin: 0;
+    padding: 0;
+}
+
+li {
+  display: inline;
+}
+
+.navbar {
+  background-color: 'lightGrey';
+  border-bottom: 1px solid lightGrey;
+  text-align: left;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 10px;
+  background-color: 'white';
+  color: #5A5959;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

@@ -6,6 +6,7 @@ import { getUser } from "./actions"
 import { bindActionCreators } from 'redux';
 
 import GoalContainer from './components/GoalContainer'
+import NavBar from './components/NavBar'
 
 class App extends Component {
 
@@ -25,6 +26,9 @@ class App extends Component {
     console.log(this.props)
     return (
       <div className="App">
+        <div className="navbar">
+          <NavBar name={this.props.name}/>
+        </div>
         <GoalContainer />
       </div>
     );

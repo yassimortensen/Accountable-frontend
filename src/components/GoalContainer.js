@@ -11,11 +11,13 @@ class GoalContainer extends Component {
 
   render() {
     // debugger
-    // const goals =
+    const goals = this.props.goals.map((goal,index) => (
+      <Goal key={index} goal={goal}/>
+    ))
     return (
       <div className="App">
-        <h1>{this.props.name}</h1>
-        <Goal />
+        <h1 style={{textAlign: 'left', paddingLeft: '2%', borderBottom: '1px solid lightGrey'}}>Goals</h1>
+        {goals}
       </div>
     );
   }
