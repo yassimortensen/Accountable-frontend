@@ -24,7 +24,7 @@ class LogContainer extends Component {
     })
 
     return (
-      <div className="App">
+      <div>
         <ul>
           {logs}
         </ul>

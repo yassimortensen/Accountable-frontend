@@ -11,7 +11,7 @@ class Log extends Component {
     // debugger
 
     return (
-      <div className="App">
+      <div className="w3-cell" style={{padding: '5%'}}>
         <p>{this.props.log.date}</p>
         <p>{this.props.log.amount_input} {this.props.unit}</p>
       </div>

@@ -11,12 +11,12 @@ class Log extends Component {
     // debugger
 
     return (
-      <div className="App">
+      <div className="w3-cell" style={{padding: '5%'}}>
         <p>{this.props.log.date}</p>
         <p>{(this.props.log.binary_input === true) ?
-          <i className="material-icons w3-button w3-round-large">add</i>
+          <i className="material-icons">check</i>
             :
-          <i className="material-icons w3-button w3-round-large">close</i>
+          <i className="material-icons">close</i>
           }
         </p>
       </div>

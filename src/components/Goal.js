@@ -12,8 +12,8 @@ class Goal extends Component {
     // debugger
 
     return (
-      <div className="App">
-        <p>{this.props.goal.name}</p>
+      <div className='w3-cell-row' style={{borderBottom: '1px solid lightGrey'}}>
+        <h4 className='w3-cell' style={{paddingLeft:'2%'}}>{this.props.goal.name}</h4>
         <LogContainer goal={this.props.goal}/>
       </div>
     );

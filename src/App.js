@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import './App.css';
 
 import { connect } from "react-redux";
@@ -7,6 +8,8 @@ import { bindActionCreators } from 'redux';
 
 import GoalContainer from './components/GoalContainer'
 import NavBar from './components/NavBar'
+import LogForm from './components/LogForm'
+import GoalForm from './components/GoalForm'
 
 class App extends Component {
 
@@ -25,11 +28,15 @@ class App extends Component {
     // // debugger
     console.log(this.props)
     return (
-      <div className="App">
+      <div>
         <div className="navbar">
           <NavBar name={this.props.name}/>
         </div>
-        <GoalContainer />
+        <Switch>
+          <Route exact path='/add/goal' render={() => <div><GoalForm /></div>} />
+          <Route exact path='/add/log' render={() => <div><LogForm /></div>} />
+          <Route exact path='/goals' render={() => <div><GoalContainer /></div>} />
+        </Switch>
       </div>
     );
   }
@@ -54,4 +61,6 @@ const mapDispatchToProps = (dispatch) => {
     }, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+//
+// export default connect(mapStateToProps, mapDispatchToProps)(App);
