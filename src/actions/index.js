@@ -1,6 +1,7 @@
 export function getUser(data){
   return {
     type: "GET_USER",
-    data
+    name: data.name,
+    goals: data.goals
   }
 }

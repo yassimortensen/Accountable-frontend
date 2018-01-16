@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import { getUser } from "./actions"
 import { bindActionCreators } from 'redux';
 
+import GoalContainer from './components/GoalContainer'
+
 class App extends Component {
 
   componentDidMount(){
@@ -14,24 +16,31 @@ class App extends Component {
   getUserData(){
     fetch('http://localhost:3000/api/v1/users/1')
     .then(res => res.json())
-    .then(res => this.props.getUser(res.name))
+    .then(res => this.props.getUser(res))
     // .then(res => console.log(res))
   }
 
   render() {
-    console.log(this.props.store.getState())
-    // debugger
+    // // debugger
+    console.log(this.props)
     return (
       <div className="App">
-        Hello!
+        <GoalContainer />
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
+// const mapStateToProps = (state) => {
+//   // console.log(state)
+//   return {
+//     ...state
+//   }
+// }
+
+const mapStateToProps = ({users_reducer}) => {
   return {
-    ...state
+    ...users_reducer
   }
 }
 
