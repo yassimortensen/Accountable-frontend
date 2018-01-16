@@ -1,0 +1,37 @@
+{
+   user: {
+   id: 1,
+   name: "Yassi",
+   password: "awfiugawelfiugfae",
+   email: "yassi@marvelit.com"
+   },
+   goals: [
+    {
+      id: 15,
+      name: "Water Intake",
+      desc: "Drink 90oz of water",
+      repeat: 7,
+      binary: FALSE,
+      amount: 90,
+      unit: "oz",
+      logs: [
+        {date: 1/10/18, binary_input: null, amount_input: 50},
+        {date: 1/11/18, binary_input: null, amount_input: 90},
+        {date: 1/12/18, binary_input: null, amount_input: 80}
+      ]
+    },
+    {
+      id: 20,
+      name: "Meditate",
+      desc: "Meditate for 10 min",
+      repeat: 5,
+      binary: TRUE,
+      amount: null,
+      unit: null,
+      logs: [
+        {date: 1/10/18, binary_input: TRUE, amount_input: null},
+        {date: 1/11/18, binary_input: FALSE, amount_input: null}
+      ]
+    }
+   ]
+}
