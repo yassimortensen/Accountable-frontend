@@ -4,7 +4,8 @@ import './App.css';
 
 import { connect } from "react-redux";
 import { getUser } from "./actions"
-import { bindActionCreators } from 'redux';
+// import { bindActionCreators } from 'redux';
+// import moment from 'moment';
 
 import GoalContainer from './components/GoalContainer'
 import NavBar from './components/NavBar'
@@ -36,7 +37,6 @@ class App extends Component {
   render() {
     // // debugger
     console.log(this.props)
-
     const form = () => {
       if (this.props.selected_goal.binary === true){
         return (<LogFormBinary />)

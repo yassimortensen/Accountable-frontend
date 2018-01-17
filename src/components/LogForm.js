@@ -30,12 +30,14 @@ class LogForm extends React.Component{
   render(){
     // console.log(this.state)
     return(
-      <div>
+      <div style={{margin: '2%'}}>
         <h4>Goal: {this.props.selected_goal.name}</h4>
         <p>{this.props.selected_goal.description}</p>
         <form onSubmit={this.handleSubmit}>
           Date: <input onChange={this.handleChange} type='date' name='date' value={this.state.date}/>
+          <br />
           Amount: <input onChange={this.handleChange} name='amount_input' type='number' value={this.state.amount_input} />
+          <br />
           <input type='submit' />
         </form>
       </div>

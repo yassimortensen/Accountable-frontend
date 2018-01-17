@@ -30,17 +30,19 @@ class LogFormBinary extends React.Component{
 
   render(){
     return(
-      <div>
+      <div style={{margin: '2%'}}>
         <h4>Goal: {this.props.selected_goal.name}</h4>
         <p>{this.props.selected_goal.description}</p>
         <form onSubmit={this.handleSubmit}>
           Date: <input onChange={this.handleChange} type='date' name='date' value={this.state.date}/>
+          <br />
           Did you complete your goal?
           <select onChange={this.handleChange} name="binary_input">
             <option value='' defaultValue></option>
             <option value={true}>Yes</option>
             <option value={false}>No</option>
           </select>
+          <br />
           <input type='submit' />
         </form>
       </div>

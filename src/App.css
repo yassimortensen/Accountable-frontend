@@ -15,6 +15,10 @@ h1 {
   margin: 0;
 }
 
+form {
+  margin: 2%;
+}
+
 .Log {
   display: inline;
 }
@@ -46,15 +50,26 @@ h1 {
   grid-template-rows: 10% auto;
 }
 
+.DateContainer {
+  display: grid;
+  grid-template-columns: 18% repeat(6, 12%) auto;
+  padding-left: 2%;
+  margin: 2%;
+  text-align: center;
+}
+
 .Goal {
   display: grid;
   grid-template-columns: 20% auto;
+  padding: 2%;
+  text-align: center;
 }
 
 .LogContainer {
   display: grid;
   grid-template-columns: repeat(7, 14%) auto;
   padding-left: 2%;
+  text-align: center;
 }
 
 /*.App-logo {

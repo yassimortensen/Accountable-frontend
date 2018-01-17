@@ -6,6 +6,7 @@ import { getUser } from "../actions";
 import { bindActionCreators } from 'redux';
 
 import Goal from './Goal';
+import DateContainer from './DateContainer'
 
 class GoalContainer extends Component {
 
@@ -17,6 +18,7 @@ class GoalContainer extends Component {
     return (
       <div className='GoalContainer'>
         <h1 style={{margins: '0', textAlign: 'left', paddingLeft: '2%', borderBottom: '1px solid lightGrey'}}>Goals</h1>
+        <DateContainer />
         {goals}
       </div>
     );
