@@ -21,7 +21,7 @@ class Goal extends Component {
     return (
       <div className='Goal' style={{borderBottom: '1px solid lightGrey'}}>
         <div style={{borderRight: '1px solid lightGrey'}}>
-          <h4 >{this.props.goal.name}</h4>
+          <NavLink to={`/goal/${this.props.goal.id}/show`}><h4 onClick={this.handleClick}>{this.props.goal.name}</h4></NavLink>
           <NavLink to={`/goal/${this.props.goal.id}/add/log`}><button onClick={this.handleClick} >Add Log</button></NavLink>
         </div>
         <LogContainer goal={this.props.goal}/>

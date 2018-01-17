@@ -10,6 +10,14 @@ import DateContainer from './DateContainer'
 
 class GoalContainer extends Component {
 
+  // constructor(){
+  //   super()
+  //
+  //   this.state= {
+  //     color: 'black'
+  //   }
+  // }
+
   render() {
     // debugger
     const goals = this.props.goals.map((goal,index) => (
