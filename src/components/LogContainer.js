@@ -4,10 +4,14 @@ import Log from './Log';
 import LogBinary from './LogBinary';
 
 import { connect } from "react-redux";
-import { getUser } from "../actions";
-import { bindActionCreators } from 'redux';
 
 class LogContainer extends Component {
+
+  // organizeLogs = () => {
+  //   this.props.dates.map(date => {
+  //     if ()
+  //   })
+  // }
 
   render() {
 
@@ -15,6 +19,7 @@ class LogContainer extends Component {
       //expect array of 7 days
       //map over array
       //add logic for empty days with no data
+
 
     const logs = this.props.goal.logs.map((log, index) => {
       if (this.props.goal.binary === true) {
@@ -38,10 +43,4 @@ const mapStateToProps = ({users_reducer}) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-      getUser: getUser
-    }, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(LogContainer);
+export default connect(mapStateToProps, null)(LogContainer);
