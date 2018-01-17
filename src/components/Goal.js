@@ -29,17 +29,5 @@ class Goal extends Component {
     );
   }
 }
-//
-// const mapStateToProps = ({users_reducer}) => {
-//   return {
-//     ...users_reducer
-//   }
-// }
-//
-// const mapDispatchToProps = (dispatch) => {
-//   return bindActionCreators({
-//       getUser: getUser
-//     }, dispatch)
-// }
 
 export default withRouter(connect(null, {selectGoal})(Goal))

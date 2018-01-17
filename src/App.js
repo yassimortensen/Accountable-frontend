@@ -4,8 +4,10 @@ import './App.css';
 
 import { connect } from "react-redux";
 import { getUser } from "./actions"
+import { getWeek } from "./actions/getWeek"
+
 // import { bindActionCreators } from 'redux';
-// import moment from 'moment';
+import moment from 'moment';
 
 import GoalContainer from './components/GoalContainer'
 import NavBar from './components/NavBar'
@@ -16,10 +18,20 @@ import GoalForm from './components/GoalForm'
 class App extends Component {
 
   componentDidMount(){
+    const dates = [
+      moment().subtract(3, 'days').format('MMMM Do YYYY'),
+      moment().subtract(2, 'days').format('MMMM Do YYYY'),
+      moment().subtract(1, 'days').format('MMMM Do YYYY'),
+      moment().format('MMMM Do YYYY'),
+      moment().add(1, 'days').format('MMMM Do YYYY'),
+      moment().add(2, 'days').format('MMMM Do YYYY'),
+      moment().add(3, 'days').format('MMMM Do YYYY'),
+    ]
+    this.props.getWeek(dates)
     this.getUserData()
   }
 
-  getUserData(){
+  getUserData(dates){
     fetch('http://localhost:3000/api/v1/users/1')
     .then(res => res.json())
     .then(res => this.props.getUser(res))
@@ -78,6 +90,6 @@ const mapStateToProps = ({users_reducer}) => {
 //     }, dispatch)
 // }
 
-export default withRouter(connect(mapStateToProps, { getUser })(App));
+export default withRouter(connect(mapStateToProps, { getUser, getWeek })(App));
 //
 // export default connect(mapStateToProps, mapDispatchToProps)(App);

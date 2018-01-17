@@ -10,10 +10,6 @@ import { bindActionCreators } from 'redux';
 class LogContainer extends Component {
 
   render() {
-    // debugger
-    // const logs = this.props.goal.logs.map((log, index) => (
-    //   <Log key={index} log={log} goal={this.props.goal}/>
-    // ))
 
     //function that returns an array of the current week
       //expect array of 7 days
