@@ -12,7 +12,6 @@ class Log extends Component {
 
     return (
       <div>
-        <p>{this.props.log.date}</p>
         <p>{(this.props.log.binary_input === true) ?
           <i className="material-icons">check</i>
             :

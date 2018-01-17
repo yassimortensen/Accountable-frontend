@@ -33,31 +33,34 @@ class GoalForm extends React.Component{
 
   render(){
     return(
-      <form onSubmit={this.handleSubmit}>
-        Name of Goal: <input onChange={this.handleChange} type='text' name='name' value={this.state.name} /><br />
-        Description: <input onChange={this.handleChange} type='textarea' name='description' value={this.state.description}/><br />
-        <p>How many times per week would you like to complete you goal?</p>
-        <select onChange={this.handleChange} name="frequency">
-          <option type="number" value='' defaultValue></option>
-          <option type="number" value='1'>1</option>
-          <option type="number" value='2'>2</option>
-          <option type="number" value='3'>3</option>
-          <option type="number" value='4'>4</option>
-          <option type="number" value='5'>5</option>
-          <option type="number" value='6'>6</option>
-          <option type="number" value='7'>7</option>
-        </select><br />
-        <p>Would you like to add amounts to your goal tracking?</p>
-        <select onChange={this.handleChange} name="binary">
-        <option defaultValue></option>
-          <option value={false}>Yes</option>
-          <option value={true}>No</option>
-        </select><br />
-        Amount: <input onChange={this.handleChange} type='number' name='amount' value={this.state.amount}/>
-        Unit: <input onChange={this.handleChange} type='text' name='unit' value={this.state.unit} /><br />
+      <div style={{padding: '2%'}}>
+        <h4>Set a New Goal</h4>
+        <form onSubmit={this.handleSubmit}>
+          Name of Goal: <input onChange={this.handleChange} type='text' name='name' value={this.state.name} /><br />
+          Description: <input onChange={this.handleChange} type='textarea' name='description' value={this.state.description}/><br />
+          <p>How many times per week would you like to complete you goal?</p>
+          <select onChange={this.handleChange} name="frequency">
+            <option type="number" value='' defaultValue></option>
+            <option type="number" value='1'>1</option>
+            <option type="number" value='2'>2</option>
+            <option type="number" value='3'>3</option>
+            <option type="number" value='4'>4</option>
+            <option type="number" value='5'>5</option>
+            <option type="number" value='6'>6</option>
+            <option type="number" value='7'>7</option>
+          </select><br />
+          <p>Would you like to add amounts to your goal tracking?</p>
+          <select onChange={this.handleChange} name="binary">
+          <option defaultValue></option>
+            <option value={false}>Yes</option>
+            <option value={true}>No</option>
+          </select><br />
+          Amount: <input onChange={this.handleChange} type='number' name='amount' value={this.state.amount}/>
+          Unit: <input onChange={this.handleChange} type='text' name='unit' value={this.state.unit} /><br />
 
-        <input type='submit'/>
-      </form>
+          <input type='submit'/>
+        </form>
+      </div>
     )
   }
 }

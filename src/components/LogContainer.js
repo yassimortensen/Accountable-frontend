@@ -11,11 +11,11 @@ class LogContainer extends Component {
   organizeLogs = () => {
     const emptyDateComponent = <Log log={{date:'', amount_input:''}}/>;
     return this.props.dates.map((date, i) => {
-      let compareDate = moment(date, 'MMMM Do YYYY')
+      let compareDate = moment(date, 'MMMM Do YYYY').format('YYYY-MM-DD')
       let foundDateComponent = emptyDateComponent;
 
       this.props.goal.logs.forEach((log, index) => {
-        if (moment(log.date, 'YYYY-MM-DD').isSame(compareDate)) {
+        if (log.date === compareDate) {
           if(this.props.goal.binary){
             foundDateComponent = <LogBinary key={index} log={log}/>
           } else {
@@ -23,7 +23,7 @@ class LogContainer extends Component {
           }
         }
       });
-      
+
       return foundDateComponent;
     })
   }

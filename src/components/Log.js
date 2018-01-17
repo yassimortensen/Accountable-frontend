@@ -12,7 +12,6 @@ class Log extends Component {
 
     return (
       <div style={{display: 'inline-block'}}>
-        <p>{this.props.log.date}</p>
         <p>{this.props.log.amount_input} {this.props.unit}</p>
       </div>
     );
