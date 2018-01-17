@@ -50,8 +50,8 @@ class GoalForm extends React.Component{
         <p>Would you like to add amounts to your goal tracking?</p>
         <select onChange={this.handleChange} name="binary">
         <option defaultValue></option>
-          <option value={true}>Yes</option>
-          <option value={false}>No</option>
+          <option value={false}>Yes</option>
+          <option value={true}>No</option>
         </select><br />
         Amount: <input onChange={this.handleChange} type='number' name='amount' value={this.state.amount}/>
         Unit: <input onChange={this.handleChange} type='text' name='unit' value={this.state.unit} /><br />

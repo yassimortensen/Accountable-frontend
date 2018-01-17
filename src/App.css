@@ -52,16 +52,16 @@ form {
 
 .DateContainer {
   display: grid;
-  grid-template-columns: 18% repeat(6, 12%) auto;
-  padding-left: 2%;
-  margin: 2%;
+  grid-template-columns: 21% repeat(6, 11%) auto;
+  /*padding-left: 2%;*/
+  margin-top: 2%;
   text-align: center;
 }
 
 .Goal {
   display: grid;
   grid-template-columns: 20% auto;
-  padding: 2%;
+  /*padding: 2%;*/
   text-align: center;
 }
 
