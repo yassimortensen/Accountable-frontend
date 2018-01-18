@@ -25,11 +25,13 @@ class LoginForm extends React.Component{
   handleNewAccount = (event) => {
     event.preventDefault()
     this.props.createUser(this.state.create_name, this.state.create_email, this.state.create_password)
+    this.props.history.push('/goals')
   }
 
   handleLogin = (event) => {
     event.preventDefault()
-    this.props.login(this.state.email, this.state.password)//.then(() => this.props.history.push('/goals'))
+    this.props.login(this.state.email, this.state.password)
+    this.props.history.push('/goals')
   }
 
   render(){
