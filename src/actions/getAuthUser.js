@@ -1,3 +1,22 @@
+export function createUser(name, email, password){
+  return dispatch => {
+    let options = {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({name, email, password})
+    }
+    fetch('http://localhost:3000/api/v1/users', options)
+      .then(res => res.json())
+      .then(json => {
+        localStorage.setItem('token',json.jwt)
+        dispatch({type: 'LOGIN', user:json})
+      })
+  }
+}
+
 export function login(email, password){
   return dispatch => {
     let options = {

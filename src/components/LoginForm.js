@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom';
-import { login } from '../actions/getAuthUser'
+import { login, createUser } from '../actions/getAuthUser'
 
 class LoginForm extends React.Component{
   constructor(){
@@ -24,7 +24,7 @@ class LoginForm extends React.Component{
 
   handleNewAccount = (event) => {
     event.preventDefault()
-    console.log(this.state)
+    this.props.createUser(this.state.create_name, this.state.create_email, this.state.create_password)
   }
 
   handleLogin = (event) => {
@@ -36,9 +36,9 @@ class LoginForm extends React.Component{
     // console.log(this.state)
     return(
       <div style={{margin: '2%', textAlign: 'center'}}>
-        <div style={{display:'inline-block'}}>
-          <i className="material-icons w3-button w3-round-large" style={{display:'inline'}}>bubble_chart</i>
-          <h4 style={{display:'inline'}}>Welcome to Accountable</h4>
+        <div>
+          <i className="material-icons" style={{fontSize: '48px'}}>spellcheck</i>
+          <h4>Welcome to Accountable</h4>
         </div>
         <h5>Track your goals to build a more positive life</h5>
         <form onSubmit={this.handleNewAccount}>
@@ -58,4 +58,4 @@ class LoginForm extends React.Component{
   }
 }
 
-export default withRouter(connect(null, { login })(LoginForm))
+export default withRouter(connect(null, { login, createUser })(LoginForm))
