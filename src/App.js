@@ -4,7 +4,8 @@ import moment from 'moment';
 import './App.css';
 
 import { connect } from "react-redux";
-import { getUser } from "./actions"
+// import { getUser } from "./actions"
+import { getCurrentUser } from './actions/getAuthUser'
 import { getWeek } from "./actions/getWeek"
 
 import GoalContainer from './components/GoalContainer'
@@ -13,8 +14,17 @@ import LogForm from './components/LogForm'
 import LogFormBinary from './components/LogFormBinary'
 import GoalForm from './components/GoalForm'
 import ShowGoalContainer from './components/ShowGoalContainer'
+import LoginForm from './components/LoginForm'
 
 class App extends Component {
+
+  componentWillMount(){
+    console.log('in CDM')
+    const token = localStorage.getItem('token')
+    if (token) {
+      this.props.getCurrentUser()
+    }
+  }
 
   componentDidMount(){
     const dates = [
@@ -27,14 +37,14 @@ class App extends Component {
       moment().add(3, 'days').format('MMMM Do YYYY'),
     ]
     this.props.getWeek(dates)
-    this.getUserData()
+    // this.getUserData()
   }
 
-  getUserData(dates){
-    fetch('http://localhost:3000/api/v1/users/1')
-    .then(res => res.json())
-    .then(res => this.props.getUser(res))
-  }
+  // getUserData(){
+  //   fetch('http://localhost:3000/api/v1/users/1')
+  //   .then(res => res.json())
+  //   .then(res => this.props.getUser(res))
+  // }
 
   render() {
     console.log(this.props)
@@ -51,6 +61,7 @@ class App extends Component {
           <NavBar name={this.props.name}/>
         </div>
         <Switch>
+          <Route exact path='/' render={() => <LoginForm />} />
           <Route exact path='/add/goal' render={() => <GoalForm />} />
           <Route exact path='/goal/:id/add/log' render={form} />
           <Route exact path='/goals' render={() => <GoalContainer />} />
@@ -74,4 +85,4 @@ const mapStateToProps = ({users_reducer}) => {
   }
 }
 
-export default withRouter(connect(mapStateToProps, { getUser, getWeek })(App));
+export default withRouter(connect(mapStateToProps, { getCurrentUser, getWeek })(App));

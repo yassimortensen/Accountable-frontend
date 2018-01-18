@@ -14,6 +14,9 @@ class NavBar extends React.Component{
         <div style={{width: '30%', textAlign: 'right', display: 'inline-block'}}>
           <li>{this.props.name}</li>
         </div>
+        <div>
+          <li>Log Out</li>
+        </div>
       </ul>
     )
   }

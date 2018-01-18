@@ -8,7 +8,7 @@ export function login(email, password){
       },
       body: JSON.stringify({email, password})
     }
-    fetch('http://localhost:3000/api/vi/auth', options)
+    fetch('http://localhost:3000/api/v1/auth', options)
       .then(res => res.json())
       .then(json => {
         localStorage.setItem('token',json.jwt)

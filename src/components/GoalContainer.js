@@ -19,7 +19,6 @@ class GoalContainer extends Component {
   // }
 
   render() {
-    // debugger
     const goals = this.props.goals.map((goal,index) => (
       <Goal key={index} goal={goal}/>
     ))
