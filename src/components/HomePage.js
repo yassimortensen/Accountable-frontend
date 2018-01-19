@@ -39,7 +39,7 @@ class HomePage extends Component {
           <Route exact path='/goals' render={() => <GoalContainer />} />
           <Route exact path='/add/goal' render={() => <GoalForm />} />
           <Route exact path='/goal/:id/add/log' render={form} />
-          <Route exact path='/goal/:id/show' render={() => <ShowGoalContainer />} />
+          <Route exact path='/goal/:id/show' render={(props) => <ShowGoalContainer {...props} goal={this.props.selected_goal} />} />
         </Switch>
       </div>
     );

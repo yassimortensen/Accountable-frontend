@@ -3,7 +3,7 @@ import { NavLink, withRouter } from 'react-router-dom';
 import '../App.css';
 import LogContainer from './LogContainer'
 
-import { selectGoal } from '../actions/selectGoal'
+import { getGoalData } from '../actions/getGoalData'
 
 import { connect } from "react-redux";
 // import { getUser } from "../actions";
@@ -12,7 +12,7 @@ import { connect } from "react-redux";
 class Goal extends Component {
 
   handleClick = (event) => {
-    this.props.selectGoal(this.props.goal)
+    this.props.getGoalData(this.props.goal.id, this.props.history)
   }
 
   render() {
@@ -21,7 +21,7 @@ class Goal extends Component {
     return (
       <div className='Goal' style={{borderBottom: '1px solid lightGrey'}}>
         <div style={{borderRight: '1px solid lightGrey'}}>
-          <NavLink to={`/goal/${this.props.goal.id}/show`}><h4 onClick={this.handleClick}>{this.props.goal.name}</h4></NavLink>
+          <h4 onClick={this.handleClick}>{this.props.goal.name}</h4>
           <NavLink to={`/goal/${this.props.goal.id}/add/log`}><button onClick={this.handleClick} >Add Log</button></NavLink>
         </div>
         <LogContainer goal={this.props.goal}/>
@@ -30,4 +30,4 @@ class Goal extends Component {
   }
 }
 
-export default withRouter(connect(null, {selectGoal})(Goal))
+export default withRouter(connect(null, { getGoalData })(Goal))
