@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import '../App.css';
+import moment  from 'moment'
 
 import { connect } from "react-redux";
-// import { Route, Switch, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import Goal from './Goal';
 import DateContainer from './DateContainer'
+import { getWeek } from '../actions/getWeek'
 
 class GoalContainer extends Component {
 
@@ -17,7 +19,27 @@ class GoalContainer extends Component {
   //   }
   // }
 
+  componentDidMount(){
+
+   if (!this.props.dates.length) {
+     const dates = [
+       moment().subtract(3, 'days').format('MMMM Do YYYY'),
+       moment().subtract(2, 'days').format('MMMM Do YYYY'),
+       moment().subtract(1, 'days').format('MMMM Do YYYY'),
+       moment().format('MMMM Do YYYY'),
+       moment().add(1, 'days').format('MMMM Do YYYY'),
+       moment().add(2, 'days').format('MMMM Do YYYY'),
+       moment().add(3, 'days').format('MMMM Do YYYY'),
+     ]
+     this.props.getWeek(dates)
+
+   }
+  }
+
   render() {
+    console.log('---------------------');
+    console.log('GOALCONTAINER props', this.props);
+    console.log('---------------------');
     const goals = this.props.goals.map((goal,index) => (
       <Goal key={index} goal={goal}/>
     ))
@@ -34,8 +56,9 @@ class GoalContainer extends Component {
 
 const mapStateToProps = ({users_reducer}) => {
   return {
-    ...users_reducer
+    goals: users_reducer.goals,
+    dates: users_reducer.dates
   }
 }
 
-export default connect(mapStateToProps, null)(GoalContainer);
+export default withRouter(connect(mapStateToProps, { getWeek })(GoalContainer));
