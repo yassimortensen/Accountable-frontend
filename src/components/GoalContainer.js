@@ -48,9 +48,16 @@ class GoalContainer extends Component {
     console.log('---------------------');
     console.log('GOALCONTAINER props', this.props);
     console.log('---------------------');
-    const goals = this.props.goals.map((goal,index) => (
-      <Goal key={index} goal={goal}/>
-    ))
+
+    let goals;
+
+    if(this.props.goals[0]){
+      goals = this.props.goals.map((goal,index) => (
+        <Goal key={index} goal={goal}/>
+      ))
+    } else {
+      goals = <h1>You have no goals yet. Create some above.</h1>
+    }
 
     return (
       <div className='GoalContainer'>

@@ -8,7 +8,7 @@ class LogForm extends React.Component{
     super();
 
     this.state = {
-      user_id: 1,
+      user_id: props.userId,
       goal_id: props.selected_goal.id,
       date: '',
       binary_input: false,

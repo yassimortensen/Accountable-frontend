@@ -48,19 +48,22 @@ form {
 .GoalContainer {
   display: grid;
   grid-template-rows: 10% auto;
+  text-align: center;
 }
 
 .DateContainer {
   display: grid;
   grid-template-columns: 21% repeat(6, 11%) auto;
+  height: 75%;
   /*padding-left: 2%;*/
-  margin-top: 2%;
+  /*margin-top: 2%;*/
   text-align: center;
 }
 
 .Goal {
   display: grid;
   grid-template-columns: 20% auto;
+  height: 90%;
   /*padding: 2%;*/
   text-align: center;
 }
@@ -68,6 +71,7 @@ form {
 .LogContainer {
   display: grid;
   grid-template-columns: repeat(7, 14%) auto;
+  height: 20%;
   padding-left: 2%;
   text-align: center;
 }

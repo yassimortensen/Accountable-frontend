@@ -1,7 +1,7 @@
 export default function users_reducer(state = {name: '', goals: [], selected_goal:undefined, dates: []}, action){
   switch (action.type){
     case 'LOGIN':
-      return {...state, name: action.user.name, goals: action.user.goals}
+      return {...state, name: action.user.name, goals: action.user.goals, userId: action.user.id}
     case 'LOGOUT':
       return {...state, name: '', goals: [], selected_goal:undefined, dates: []}
     // case 'GET_USER':

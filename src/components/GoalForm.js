@@ -5,11 +5,11 @@ import { postGoal } from '../actions/postGoal';
 // import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 
 class GoalForm extends React.Component{
-  constructor(){
+  constructor(props){
     super();
 
     this.state = {
-      user_id: 1,
+      user_id: props.userId,
       name: '',
       description: '',
       frequency: undefined,
@@ -64,4 +64,11 @@ class GoalForm extends React.Component{
     )
   }
 }
-export default withRouter(connect(null, {postGoal})(GoalForm))
+
+const mapStateToProps = ({users_reducer}) => {
+  return {
+    ...users_reducer
+  }
+}
+
+export default withRouter(connect(mapStateToProps, {postGoal})(GoalForm))
