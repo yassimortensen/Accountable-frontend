@@ -6,7 +6,7 @@ class Date extends Component {
   render() {
     return (
       <div>
-        {this.props.date}
+        <p>{this.props.date}</p>
       </div>
     );
   }

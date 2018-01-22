@@ -21,14 +21,23 @@ class App extends Component {
 
   componentDidMount(){
     console.log('ABOUT TO GET THE DATES');
+    // const dates = [
+    //   moment().subtract(3, 'days').format('MMMM Do YYYY'),
+    //   moment().subtract(2, 'days').format('MMMM Do YYYY'),
+    //   moment().subtract(1, 'days').format('MMMM Do YYYY'),
+    //   moment().format('MMMM Do YYYY'),
+    //   moment().add(1, 'days').format('MMMM Do YYYY'),
+    //   moment().add(2, 'days').format('MMMM Do YYYY'),
+    //   moment().add(3, 'days').format('MMMM Do YYYY'),
+    // ]
     const dates = [
-      moment().subtract(3, 'days').format('MMMM Do YYYY'),
-      moment().subtract(2, 'days').format('MMMM Do YYYY'),
-      moment().subtract(1, 'days').format('MMMM Do YYYY'),
-      moment().format('MMMM Do YYYY'),
-      moment().add(1, 'days').format('MMMM Do YYYY'),
-      moment().add(2, 'days').format('MMMM Do YYYY'),
-      moment().add(3, 'days').format('MMMM Do YYYY'),
+      moment().startOf('week').format('MMMM Do YYYY'),
+      moment().startOf('week').add(1, 'days').format('MMMM Do YYYY'),
+      moment().startOf('week').add(2, 'days').format('MMMM Do YYYY'),
+      moment().startOf('week').add(3, 'days').format('MMMM Do YYYY'),
+      moment().startOf('week').add(4, 'days').format('MMMM Do YYYY'),
+      moment().startOf('week').add(5, 'days').format('MMMM Do YYYY'),
+      moment().startOf('week').add(6, 'days').format('MMMM Do YYYY')
     ]
     this.props.getWeek(dates)
   }
