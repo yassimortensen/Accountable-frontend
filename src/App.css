@@ -54,7 +54,6 @@ form {
 .DateContainer {
   display: grid;
   grid-template-columns: 21% repeat(6, 11%) auto;
-  height: 75%;
   /*padding-left: 2%;*/
   /*margin-top: 2%;*/
   text-align: center;
@@ -63,7 +62,7 @@ form {
 .Goal {
   display: grid;
   grid-template-columns: 20% auto;
-  height: 90%;
+  height: 200px;
   /*padding: 2%;*/
   text-align: center;
 }
@@ -71,7 +70,8 @@ form {
 .LogContainer {
   display: grid;
   grid-template-columns: repeat(7, 14%) auto;
-  height: 20%;
+  height: 100%;
+  line-height: 100px;
   padding-left: 2%;
   text-align: center;
 }
@@ -99,8 +99,8 @@ form {
 
 li:hover {
   text-decoration: underline;
-  text-decoration-color: #FEDDE8;
-  -webkit-text-decoration-color: #FEDDE8;
+  text-decoration-color: #B8CFF2;
+  -webkit-text-decoration-color: #B8CFF2;
 }
 
 /*.App-logo {

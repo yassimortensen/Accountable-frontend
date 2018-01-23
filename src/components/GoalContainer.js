@@ -45,9 +45,6 @@ class GoalContainer extends Component {
   }
 
   render() {
-    console.log('---------------------');
-    console.log('GOALCONTAINER props', this.props);
-    console.log('---------------------');
 
     let goals;
 
@@ -61,7 +58,7 @@ class GoalContainer extends Component {
 
     return (
       <div className='GoalContainer'>
-        <h1 style={{margins: '0', textAlign: 'left', paddingLeft: '2%', borderBottom: '1px solid lightGrey'}}>Goals</h1>
+        <h1 style={{backgroundImage: `url("./lined_paper_@2X.png")`, margins: '0', textAlign: 'left', paddingLeft: '2%', borderBottom: '1px solid lightGrey', fontFamily:'Cabin Sketch'}}>goals</h1>
         <DateContainer />
         {goals}
       </div>

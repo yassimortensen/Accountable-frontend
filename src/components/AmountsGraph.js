@@ -25,13 +25,14 @@ class AmountsGraph extends Component {
     this.props.selected_goal.logs.forEach(log => {
       logData.push(log.amount_input)
     })
-    //UNFINISHED
+    console.log(logData)
   }
 
   render() {
     console.log(this.props)
 
     const organizedLogs = this.props.selected_goal.logs.sort(
+      //sorts all logs by date from least to most recent
       function (a, b) {
         let logA = a.date
         let logB = b.date
@@ -44,6 +45,7 @@ class AmountsGraph extends Component {
     )
 
     const organizedByMonth = new Array()
+    //array of all logs organized by month
 
     const getMonth = organizedLogs.forEach(log => {
       let date = new Date(log.date)

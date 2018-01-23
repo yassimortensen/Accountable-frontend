@@ -15,7 +15,9 @@ class LoginForm extends React.Component{
       password: '',
       create_name: '',
       create_email: '',
-      create_password: ''
+      create_password: '',
+      errorMessage: '',
+      loginErrorMessage: ''
     }
   }
 
@@ -27,14 +29,30 @@ class LoginForm extends React.Component{
 
   handleNewAccount = (event) => {
     event.preventDefault()
-    this.props.createUser(this.state.create_name, this.state.create_email, this.state.create_password)
-    this.props.history.push('/goals')
+    if(this.state.create_name === '' || this.state.create_email === '' || this.state.create_password === '' ){
+      this.setState({errorMessage: "You missed a spot! Don't forget to fill in all of the fields."})
+    } else if (!this.state.create_email.includes("@") || !this.state.create_email.includes(".com")) {
+      this.setState({errorMessage: "Ooops! Please enter a valid email."})
+    } else if (this.state.create_password.length < 6) {
+      this.setState({errorMessage: "Ooops! Please choose a password longer than 6 characters."})
+    } else {
+      this.setState({errorMessage: ''})
+      this.props.createUser(this.state.create_name, this.state.create_email, this.state.create_password)
+      this.props.history.push('/goals')
+    }
   }
 
   handleLogin = (event) => {
     event.preventDefault()
-    this.props.login(this.state.email, this.state.password)
-    this.props.history.push('/goals')
+    if(this.state.email === '' || this.state.password === ''){
+      this.setState({loginErrorMessage: "You missed a spot! Don't forget to fill in all of the fields."})
+    } else if (!this.state.email.includes("@") || !this.state.email.includes(".com")) {
+      this.setState({loginErrorMessage: "Ooops! Please enter a valid email."})
+    } else {
+      this.setState({loginErrorMessage: ''})
+      this.props.login(this.state.email, this.state.password)
+      this.props.history.push('/goals')
+    }
   }
 
   // <div style={{textAlign: 'center'}}>
@@ -78,18 +96,19 @@ class LoginForm extends React.Component{
           <h4 style={{fontFamily: 'Mr Bedfort', fontSize:'80px'}}>Accountable</h4>
         </div>
       </StyleRoot>
-
         <h5 style={{fontFamily: 'Zeyada', fontSize: '36px'}}>Track your goals to build a more positive life</h5>
+        <div style={{color: 'red'}}>{this.state.errorMessage}</div>
         <form onSubmit={this.handleNewAccount} style={{margin:'1%', width:'20%', textAlign:'center', display: 'inline-block'}}>
           <input className='w3-input w3-border w3-round-xlarge' onChange={this.handleChange} name='create_name' type='text' placeholder='Name' value={this.state.create_name} /><br />
           <input className='w3-input w3-border w3-round-xlarge' onChange={this.handleChange} name='create_email' type='text' placeholder='Email' value={this.state.create_email} /><br />
-          <input className='w3-input w3-border w3-round-xlarge' onChange={this.handleChange} name='create_password' type='text' placeholder='Password' value={this.state.create_password} /> <br />
+          <input className='w3-input w3-border w3-round-xlarge' onChange={this.handleChange} name='create_password' type='password' placeholder='Password' value={this.state.create_password} /> <br />
           <input className='w3-button w3-blue w3-round-xxlarge' style={{marginTop:'1%'}} type='submit' value='Create an Account' />
         </form>
         <h5 style={{fontFamily: 'Zeyada', fontSize: '36px', margin:'0'}}>OR</h5>
+        <div style={{color: 'red', margin: '1%', marginTop: '0'}}>{this.state.loginErrorMessage}</div>
         <form onSubmit={this.handleLogin} style={{ margin:'0', marginBottom: '2%', width:'20%', textAlign:'center', display: 'inline-block'}}>
           <input className='w3-input w3-border w3-round-xlarge' onChange={this.handleChange} name='email' type='text' placeholder='Email' value={this.state.email}/><br />
-          <input className='w3-input w3-border w3-round-xlarge' onChange={this.handleChange} name='password' type='text' placeholder='Password' value={this.state.password} /><br />
+          <input className='w3-input w3-border w3-round-xlarge' onChange={this.handleChange} name='password' type='password' placeholder='Password' value={this.state.password} /><br />
           <input className='w3-button w3-blue w3-round-xxlarge' style={{marginTop:'1%'}} type='submit' value='Log in' />
         </form>
       </div>

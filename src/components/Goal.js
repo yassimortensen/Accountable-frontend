@@ -5,6 +5,7 @@ import LogContainer from './LogContainer'
 
 import { getGoalData } from '../actions/getGoalData'
 import { getGoalDataForLogForm } from '../actions/getGoalDataForLogForm'
+import { deleteGoal } from '../actions/deleteGoal'
 
 import { connect } from "react-redux";
 // import { getUser } from "../actions";
@@ -20,14 +21,24 @@ class Goal extends Component {
     this.props.getGoalDataForLogForm(this.props.goal.id, this.props.history)
   }
 
+  handleDeleteClick = (event) => {
+    console.log('delete!')
+    // this.props.deleteGoal(this.props.goal.id, this.props.history)
+  }
+
   render() {
     // debugger
 
     return (
-      <div className='Goal' style={{borderBottom: '1px solid lightGrey', backgroundImage: `url("./lined_paper_@2X.png")`}}>
+      <div className='Goal' style={{borderBottom: '4px solid lightGrey', backgroundImage: `url("./lined_paper_@2X.png")`}}>
         <div style={{borderRight: '1px solid lightGrey'}}>
-          <h4 onClick={this.handleClick} style={{fontFamily: 'Zeyada', fontSize:'36px'}}>{this.props.goal.name}</h4>
-          <button className='w3-button w3-blue w3-round-xxlarge' onClick={this.handleLogClick} >Add Log</button>
+          <div className='w3-button w3-blue w3-round-xxlarge' style={{display: 'inline', margin: '5%'}} onClick={this.handleDeleteClick}>
+            <i class="fa fa-times" aria-hidden="true" style={{color: 'white'}}></i>
+          </div>
+          <h4 onClick={this.handleClick} style={{fontFamily:'Cabin Sketch', fontSize:'36px', display: 'inline'}}>{this.props.goal.name}</h4>
+          <div className='w3-button w3-blue w3-round-xxlarge' style={{display: 'inline', margin: '5%'}} onClick={this.handleLogClick}>
+            <i class="fa fa-plus" aria-hidden="true" style={{color: 'white'}}></i>
+          </div>
         </div>
         <LogContainer goal={this.props.goal}/>
       </div>
