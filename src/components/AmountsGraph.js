@@ -138,6 +138,9 @@ class AmountsGraph extends Component {
           <h2>Overview</h2>
         </div><br />
         <div style={{textAlign:'center'}}>
+          <div style={{width: '60%', textAlign: 'center', display:'inline-block'}}>
+            <Line data={lineData} options={lineOptions}/>
+          </div>
           <div style={{textAlign: 'center'}}>
             <div style={{textAlign: 'center', display:'inline-block', margin: '2%'}}>
               <h4 style={{display:'inline', margin: '2%'}}>Average</h4><br />
@@ -153,9 +156,6 @@ class AmountsGraph extends Component {
             <div style={{textAlign: 'center', display:'inline-block', margin: '2%'}}>
               <h4 style={{display:'inline', margin: '2%'}}>Year</h4>
             </div>
-          </div>
-          <div style={{width: '75%', height:'30%', textAlign: 'center', display:'inline-block'}}>
-            <Line data={lineData} options={lineOptions}/>
           </div>
         </div>
       </div>

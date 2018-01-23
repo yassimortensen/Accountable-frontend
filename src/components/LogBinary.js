@@ -13,9 +13,9 @@ class Log extends Component {
     return (
       <div>
         <p>{(this.props.log.binary_input === true) ?
-          <i className="material-icons">check</i>
+          <i class="fa fa-check-square-o fa-2x" aria-hidden="true" style={{color: 'grey'}}></i>
             :
-          <i className="material-icons">close</i>
+            <i class="fa fa-square-o fa-2x" aria-hidden="true" style={{color: 'grey'}}></i>
           }
         </p>
       </div>

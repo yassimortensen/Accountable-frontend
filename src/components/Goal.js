@@ -24,10 +24,10 @@ class Goal extends Component {
     // debugger
 
     return (
-      <div className='Goal' style={{borderBottom: '1px solid lightGrey'}}>
+      <div className='Goal' style={{borderBottom: '1px solid lightGrey', backgroundImage: `url("./lined_paper_@2X.png")`}}>
         <div style={{borderRight: '1px solid lightGrey'}}>
-          <h4 onClick={this.handleClick}>{this.props.goal.name}</h4>
-          <button onClick={this.handleLogClick} >Add Log</button>
+          <h4 onClick={this.handleClick} style={{fontFamily: 'Zeyada', fontSize:'36px'}}>{this.props.goal.name}</h4>
+          <button className='w3-button w3-blue w3-round-xxlarge' onClick={this.handleLogClick} >Add Log</button>
         </div>
         <LogContainer goal={this.props.goal}/>
       </div>

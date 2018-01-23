@@ -13,8 +13,9 @@ class NavBar extends React.Component{
   render(){
     return(
       <ul>
-        <div style={{width: '25%', textAlign: 'left', display: 'inline-block'}}>
-          <li><NavLink to='/goals'><i className="material-icons w3-button w3-round-large">bubble_chart</i>Accountable</NavLink></li>
+        <div style={{width: '25%', textAlign: 'left', display: 'inline-block', fontFamily: 'Mr Bedfort', fontSize:'36px'}}>
+          <li><img style={{width:'15%'}} src="https://image.flaticon.com/icons/svg/16/16294.svg" /></li>
+          <li><NavLink to='/goals'>Accountable</NavLink></li>
         </div>
         <div style={{width: '50%', textAlign: 'center', display: 'inline-block'}}>
           <li><NavLink to='/add/goal'><i className="material-icons w3-button w3-round-large">add</i></NavLink></li>
