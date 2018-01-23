@@ -4,9 +4,9 @@ import '../App.css';
 
 import { withRouter } from 'react-router-dom';
 import { connect } from "react-redux";
-import {Line} from "react-chartjs-2";
+import {Bar} from "react-chartjs-2";
 
-class AmountsGraph extends Component {
+class BinaryGraph extends Component {
 
   getAverage = () => {
     let logData = []
@@ -78,11 +78,31 @@ class AmountsGraph extends Component {
       return average
     })
 
+    const dataSet = organizedByMonth.map(month => {
+      let date = new Date()
+      let year = date.getFullYear()
+      let logs = []
+      if (month[year-1]){
+        month[year-1].forEach(log => (logs.push(log.binary_input)))
+      }
+      return logs
+    })
+
+    const analysis = dataSet.map(array => {
+      let n = 0
+      array.map(value => {
+        if(value === true){
+          n++
+        }
+      })
+      let average = (n / array.length) * 100
+      return average
+    })
+
     const lineData = {
       datasets: [
         {
-          data: averagesByMonth,
-          fill: false,
+          data: analysis
         }
       ]
     };
@@ -95,6 +115,11 @@ class AmountsGraph extends Component {
 
     const lineOptions =
     {
+      "horizontalLine": [{
+        "y": ((this.props.selected_goal.frequency)/7)*100,
+        "style": "rgba(255, 0, 0, .4)",
+        "text": "your goal"
+      }],
       animation: {
         duration: 1500
       },
@@ -111,11 +136,12 @@ class AmountsGraph extends Component {
         yAxes: [{
           scaleLabel:{
             display: true,
-            labelString: `Average ${this.props.selected_goal.name}, ${this.props.selected_goal.unit}`,
+            labelString: `Percentage of Days, %`,
             fontSize: 24
           },
           ticks: {
-            fontSize: 18
+            fontSize: 18,
+            max: 100
           }
         }],
         xAxes: [{
@@ -140,7 +166,7 @@ class AmountsGraph extends Component {
         </div><br />
         <div style={{textAlign:'center'}}>
           <div style={{width: '60%', textAlign: 'center', display:'inline-block'}}>
-            <Line data={lineData} options={lineOptions}/>
+            <Bar data={lineData} options={lineOptions}/>
           </div>
           <div style={{textAlign: 'center'}}>
             <div style={{textAlign: 'center', display:'inline-block', margin: '2%'}}>
@@ -170,4 +196,4 @@ const mapStateToProps = ({users_reducer}) => {
   }
 }
 
-export default withRouter(connect(mapStateToProps, null)(AmountsGraph));
+export default withRouter(connect(mapStateToProps, null)(BinaryGraph));

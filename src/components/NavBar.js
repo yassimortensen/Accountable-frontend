@@ -15,10 +15,10 @@ class NavBar extends React.Component{
       <ul>
         <div style={{width: '25%', textAlign: 'left', display: 'inline-block', fontFamily: 'Mr Bedfort', fontSize:'36px'}}>
           <li><img style={{width:'15%'}} src="https://image.flaticon.com/icons/svg/16/16294.svg" /></li>
-          <li><NavLink to='/goals'>Accountable</NavLink></li>
+          <li><NavLink to='/goals' className="blush" style={{textDecorationColor: '#B8CFF2'}}>Accountable</NavLink></li>
         </div>
         <div style={{width: '50%', textAlign: 'center', display: 'inline-block'}}>
-          <li><NavLink to='/add/goal'><i className="material-icons w3-button w3-round-large">add</i></NavLink></li>
+          <li><NavLink to='/add/goal'><i className="material-icons w3-button w3-blue w3-round-xxlarge">add</i></NavLink></li>
         </div>
         <div style={{width: '15%', textAlign: 'center', display: 'inline-block'}}>
           <li>{this.props.name}</li>

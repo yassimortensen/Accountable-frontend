@@ -4,8 +4,12 @@
   "private": true,
   "dependencies": {
     "chart.js": "^2.7.1",
+    "chartjs-horizontal-line-plugin": "^2.0.0",
     "moment": "^2.20.1",
+    "radium": "^0.21.1",
     "react": "^16.2.0",
+    "react-animated-css": "^1.0.2",
+    "react-animations": "^1.0.0",
     "react-chartjs-2": "^2.7.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",

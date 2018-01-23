@@ -3,6 +3,7 @@ import '../App.css';
 import { getGoalData } from '../actions/getGoalData';
 import { connect } from "react-redux";
 import AmountsGraph from './AmountsGraph';
+import BinaryGraph from './BinaryGraph';
 
 class ShowGoalContainer extends Component {
 
@@ -18,9 +19,11 @@ class ShowGoalContainer extends Component {
 
     if (!this.props.selected_goal){
       content = <div>Loading</div>
+    } else if (this.props.selected_goal.binary === true) {
+      content = <BinaryGraph />
     } else {
       content = <AmountsGraph />
-  }
+    }
 
     return content;
   }
