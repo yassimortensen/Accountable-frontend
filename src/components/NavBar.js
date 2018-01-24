@@ -14,7 +14,6 @@ class NavBar extends React.Component{
     return(
       <ul style={{color: 'black'}}>
         <div style={{width: '25%', textAlign: 'left', display: 'inline-block', fontFamily: 'Mr Bedfort', fontSize:'36px'}}>
-          <li><img style={{width:'15%'}} src="https://image.flaticon.com/icons/svg/16/16294.svg" /></li>
           <li><NavLink to='/goals' className="blush" style={{textDecorationColor: '#1F8CE3'}}>Accountable</NavLink></li>
         </div>
         <div style={{width: '50%', textAlign: 'center', display: 'inline-block', fontFamily: 'Zeyada', fontSize:'36px', color: '#1F8CE3'}}>
@@ -24,9 +23,9 @@ class NavBar extends React.Component{
         </div>
         <div style={{width: '15%', textAlign: 'center', display: 'inline-block', fontFamily:'Open Sans', fontSize:'18px'}}>
           Logged in as:
-          <li style={{fontSize: '36px', fontFamily: 'Zeyada', paddingLeft:'2%'}}>{this.props.name}</li>
+          <li style={{color: '#4DBFB6', fontSize: '36px', fontFamily: 'Zeyada', paddingLeft:'2%', textDecorationColor: '#4DBFB6'}}>{this.props.name}</li>
         </div>
-        <div style={{width: '10%', textAlign: 'right', display: 'inline-block', textDecorationColor: '#B8CFF2', fontFamily: 'Mr Bedfort', fontSize:'24px'}}>
+        <div style={{color: 'red', width: '10%', textAlign: 'right', display: 'inline-block', textDecorationColor: 'black', fontFamily: 'Mr Bedfort', fontSize:'24px'}}>
           <li onClick={this.handleLogout}>Log Out</li>
         </div>
       </ul>

@@ -57,9 +57,8 @@ class GoalContainer extends Component {
     }
 
     return (
-      <div className='GoalContainer'>
-        <h1 style={{height: '60px', backgroundImage: `url("./lined_paper_@2X.png")`, margins: '0', textAlign: 'left', paddingLeft: '2%', borderBottom: '1px solid lightGrey', fontFamily:'Cabin Sketch'}}>
-          goals
+      <div className='GoalContainer' style={{backgroundImage: `url("./lined_paper_@2X.png")`}}>
+        <h1 style={{color: 'rgba(192, 129, 255, 1)', height: '60px', margins: '0', textAlign: 'left', paddingLeft: '2%', fontFamily:'Cabin Sketch'}}>
           <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./017-shape-1.png" />
           <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./011-alarm-clock-hand-drawn-outline.png" />
           <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./008-paint.png" />
@@ -67,9 +66,9 @@ class GoalContainer extends Component {
           <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./018-social.png" />
           <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./015-money.png" />
           <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./016-interface.png" />
-
-
-
+        </h1>
+        <h1 style={{paddingTop: '10px', textAlign:'center', height: '80px', backgroundImage: `url("./lined_paper_@2X.png")`, margins: '0', paddingLeft: '2%', fontFamily:'Cabin Sketch'}}>
+        week of {moment().startOf('week').format('MMMM Do YYYY')} - {moment().startOf('week').add(6, 'days').format('MMMM Do YYYY')}
         </h1>
         <DateContainer />
         <div style={{backgroundImage: `url("./lined_paper_@2X.png")`, height: '100%'}}>

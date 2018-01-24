@@ -13,8 +13,8 @@ class DateContainer extends Component {
     ))
 
     return (
-      <div className='DateContainer' style={{borderBottom: '1px solid lightGrey'}}>
-        <div></div>
+      <div className='DateContainer' style={{borderBottom: '2px solid red'}}>
+        <div style={{borderRight:'2px solid red'}}></div>
         {dateComponents}
       </div>
     );

@@ -51,7 +51,7 @@ form {
 
 .DateContainer {
   display: grid;
-  grid-template-columns: 21% repeat(6, 11%) auto;
+  grid-template-columns: 20% repeat(6, 11%) auto;
   height: 100px;
   line-height: 100%;
   /*padding-left: 2%;*/
@@ -72,7 +72,6 @@ form {
   grid-template-columns: repeat(7, 14%) auto;
   height: 100px;
   line-height: 100px;
-  padding-left: 2%;
   text-align: center;
 }
 
@@ -104,6 +103,11 @@ li:hover {
 
 .hover:hover {
   background-color: rgba(225, 225, 225, 0.5);
+}
+
+.line:hover {
+  text-decoration: underline;
+  text-decoration-color: black;
 }
 
 /*.App-logo {

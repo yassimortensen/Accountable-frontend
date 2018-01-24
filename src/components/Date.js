@@ -7,7 +7,7 @@ class Date extends Component {
   render() {
     return (
       <div>
-        <p style={{fontFamily:'Zeyada', fontSize: '36px'}}>{moment(this.props.date, 'MMMM Do YYYY').format('dddd')}</p>
+        <p style={{fontFamily:'Zeyada', fontSize: '36px', color: '#1F8CE3'}}>{moment(this.props.date, 'MMMM Do YYYY').format('dddd')}</p>
       </div>
     );
   }

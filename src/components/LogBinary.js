@@ -13,9 +13,9 @@ class Log extends Component {
     return (
       <div>
         <p style={{margin: '0'}}>{(this.props.log.binary_input === true) ?
-          <i class="fa fa-check-square-o fa-2x" aria-hidden="true" style={{color: 'black', margin: '0'}}></i>
+          <img style={{maxHeight: '40px', margin: '0'}} src="./020-sign.png" />
             :
-            <i class="fa fa-square-o fa-2x" aria-hidden="true" style={{color: 'black', margin: '0'}}></i>
+            <div style={{fontFamily:'Cabin Sketch', fontSize:'40px', paddingTop:'1%', color: '#444546'}}> X </div>
           }
         </p>
       </div>
