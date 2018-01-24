@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-// import moment from 'moment';
+import moment from 'moment';
 import '../App.css';
 
 import { withRouter } from 'react-router-dom';
 import { connect } from "react-redux";
 import {Line} from "react-chartjs-2";
 
-class AmountsGraph extends Component {
+class AmountsGraphMonth extends Component {
 
   getAverage = () => {
     let logData = []
@@ -25,11 +25,10 @@ class AmountsGraph extends Component {
     this.props.selected_goal.logs.forEach(log => {
       logData.push(log.amount_input)
     })
-    console.log(logData)
   }
 
   render() {
-    console.log(this.props)
+    console.log('month data!!')
 
     const organizedLogs = this.props.selected_goal.logs.sort(
       //sorts all logs by date from least to most recent
@@ -62,38 +61,34 @@ class AmountsGraph extends Component {
       }
     })
 
-    const averagesByMonth = organizedByMonth.map(month => {
-      let date = new Date()
-      let year = date.getFullYear()
-      let getSum = function getSum(total, num) {
-          return total + num;
-      }
-      let amounts = []
+    const date = moment().subtract(1, 'months').format('YYYY-MM-DD')
+    const lastMonth = new Date(date)
+    const yearOfLastMonth = lastMonth.getFullYear()
+    const monthInteger = lastMonth.getMonth()
 
-      if (month[year-1]){
-        month[year-1].forEach(log => (amounts.push(log.amount_input)))
-      }
-      // else {
-      //   month[year].forEach(log => (amounts.push(log.amount_input)))
-      // }
-      let average = (amounts.reduce(getSum))/amounts.length
-      return average
+    const lastMonthData = organizedByMonth[monthInteger][yearOfLastMonth]
+
+    const amounts = lastMonthData.map(log => {
+      return log.amount_input
     })
+
+    const dates = lastMonthData.map(log => {
+      let date = moment(log.date, "YYYY-MM-DD").format('MM-DD')
+      return date
+    })
+
+    // const newData = [lastMonthLogs[0], lastMonthLogs[1], lastMonthLogs[2], lastMonthLogs[3]]
+
+    // debugger
 
     const lineData = {
       datasets: [
         {
-          data: averagesByMonth,
+          data: amounts,
           fill: false,
         }
       ]
     };
-
-    const previousYear = () => {
-      let date = new Date()
-      let year = date.getFullYear()
-      return (year-1)
-    }
 
     const lineOptions =
     {
@@ -104,28 +99,31 @@ class AmountsGraph extends Component {
       title: {
         display: true,
         fontSize: 24,
-        text: `Did you ${this.props.selected_goal.description.toLowerCase()} for ${previousYear()}?`
+        text: `Did you ${this.props.selected_goal.description.toLowerCase()} last month?`
       },
       scales: {
         yAxes: [{
           scaleLabel:{
             display: true,
-            labelString: `Average ${this.props.selected_goal.name}, ${this.props.selected_goal.unit}`,
+            labelString: `${this.props.selected_goal.name}, ${this.props.selected_goal.unit}`,
             fontSize: 24
           },
           ticks: {
-            fontSize: 18
+
+            fontSize: 16,
+
           }
         }],
         xAxes: [{
           scaleLabel:{
-            // display: true,
-            // fontSize: 24
+            display: true,
+            fontSize: 24
           },
           ticks: {
             fontSize: 18,
+            autoSkipPadding: 20
           },
-          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
+          labels: dates
         }]
       },
       annotation: {
@@ -177,4 +175,4 @@ const mapStateToProps = ({users_reducer}) => {
   }
 }
 
-export default withRouter(connect(mapStateToProps, null)(AmountsGraph));
+export default withRouter(connect(mapStateToProps, null)(AmountsGraphMonth));

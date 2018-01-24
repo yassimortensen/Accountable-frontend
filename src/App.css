@@ -54,6 +54,8 @@ form {
 .DateContainer {
   display: grid;
   grid-template-columns: 21% repeat(6, 11%) auto;
+  height: 100px;
+  line-height: 100%;
   /*padding-left: 2%;*/
   /*margin-top: 2%;*/
   text-align: center;

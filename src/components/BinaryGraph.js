@@ -146,9 +146,9 @@ class BinaryGraph extends Component {
         }],
         xAxes: [{
           scaleLabel:{
-            display: true,
-            labelString: `Month of Previous Year (${previousYear()})`,
-            fontSize: 24
+            // display: true,
+            // labelString: `Month of Previous Year (${previousYear()})`,
+            // fontSize: 24
           },
           ticks: {
             fontSize: 18,
@@ -160,10 +160,6 @@ class BinaryGraph extends Component {
 
     return (
       <div>
-        <h1 style={{margins: '0', textAlign: 'left', paddingLeft: '2%', borderBottom: '1px solid lightGrey'}}>{this.props.selected_goal.name}</h1>
-        <div style={{paddingLeft:'10%', display:'inline-block'}}>
-          <h2>Overview</h2>
-        </div><br />
         <div style={{textAlign:'center'}}>
           <div style={{width: '60%', textAlign: 'center', display:'inline-block'}}>
             <Bar data={lineData} options={lineOptions}/>
@@ -176,12 +172,6 @@ class BinaryGraph extends Component {
             <div style={{textAlign: 'center', display:'inline-block', margin: '2%'}}>
               <h4 style={{display:'inline', margin: '2%'}}>Score</h4><br />
               <h4 style={{display:'inline', margin: '2%'}}>{this.getScore()}</h4>
-            </div>
-            <div style={{textAlign: 'center', display:'inline-block', margin: '2%'}}>
-              <h4 style={{display:'inline', margin: '2%'}}>Month</h4>
-            </div>
-            <div style={{textAlign: 'center', display:'inline-block', margin: '2%'}}>
-              <h4 style={{display:'inline', margin: '2%'}}>Year</h4>
             </div>
           </div>
         </div>

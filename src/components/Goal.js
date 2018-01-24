@@ -32,12 +32,12 @@ class Goal extends Component {
     return (
       <div className='Goal' style={{borderBottom: '4px solid lightGrey', backgroundImage: `url("./lined_paper_@2X.png")`}}>
         <div style={{borderRight: '1px solid lightGrey'}}>
-          <div className='w3-button w3-blue w3-round-xxlarge' style={{display: 'inline', margin: '5%'}} onClick={this.handleDeleteClick}>
-            <i class="fa fa-times" aria-hidden="true" style={{color: 'white'}}></i>
+          <h4 onClick={this.handleClick} style={{fontFamily:'Cabin Sketch', fontSize:'36px', display: 'inline'}}>{this.props.goal.name}</h4><br />
+          <div className='w3-button w3-round-xxlarge' style={{display: 'inline', margin: '5%', fontFamily:'Cabin Sketch', fontSize:'36px', color: 'red'}} onClick={this.handleDeleteClick}>
+            X
           </div>
-          <h4 onClick={this.handleClick} style={{fontFamily:'Cabin Sketch', fontSize:'36px', display: 'inline'}}>{this.props.goal.name}</h4>
-          <div className='w3-button w3-blue w3-round-xxlarge' style={{display: 'inline', margin: '5%'}} onClick={this.handleLogClick}>
-            <i class="fa fa-plus" aria-hidden="true" style={{color: 'white'}}></i>
+          <div className='w3-button w3-round-xxlarge' style={{display: 'inline', margin: '5%', fontFamily:'Zeyada', fontSize:'36px', color: 'blue'}} onClick={this.handleLogClick}>
+          add log
           </div>
         </div>
         <LogContainer goal={this.props.goal}/>
