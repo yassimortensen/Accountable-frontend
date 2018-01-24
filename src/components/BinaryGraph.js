@@ -102,7 +102,36 @@ class BinaryGraph extends Component {
     const lineData = {
       datasets: [
         {
-          data: analysis
+          data: analysis,
+          borderColor:[
+            'rgba(255, 65, 65, 1)',
+            'rgba(255, 173, 96, 1)',
+            'rgba(255, 219, 96, 1)',
+            'rgba(50, 194, 164, 1)',
+            'rgba(92, 162, 232, 1)',
+            'rgba(192, 129, 255, 1)',
+            'rgba(255, 65, 65, 1)',
+            'rgba(255, 173, 96, 1)',
+            'rgba(255, 219, 96, 1)',
+            'rgba(50, 194, 164, 1)',
+            'rgba(92, 162, 232, 1)',
+            'rgba(192, 129, 255, 1)'
+          ],
+          borderWidth: 1,
+          backgroundColor: [
+            'rgba(255, 65, 65, 0.2)',
+            'rgba(255, 173, 96, 0.2)',
+            'rgba(255, 219, 96, 0.2)',
+            'rgba(50, 194, 164, 0.2)',
+            'rgba(92, 162, 232, 0.2)',
+            'rgba(192, 129, 255, 0.2)',
+            'rgba(255, 65, 65, 0.2)',
+            'rgba(255, 173, 96, 0.2)',
+            'rgba(255, 219, 96, 0.2)',
+            'rgba(50, 194, 164, 0.2)',
+            'rgba(92, 162, 232, 0.2)',
+            'rgba(192, 129, 255, 0.2)'
+          ]
         }
       ]
     };
@@ -141,7 +170,7 @@ class BinaryGraph extends Component {
           },
           ticks: {
             fontSize: 18,
-            max: 100
+            // max: 100
           }
         }],
         xAxes: [{

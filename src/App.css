@@ -42,7 +42,7 @@ form {
   display: grid;
   height: 100vh;
   width: 100vw;
-  grid-template-rows: 100px auto;
+  grid-template-rows: 9% auto;
 }
 
 .GoalContainer {

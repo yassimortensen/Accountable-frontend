@@ -53,14 +53,16 @@ class GoalContainer extends Component {
         <Goal key={index} goal={goal}/>
       ))
     } else {
-      goals = <h1>You have no goals yet. Create some above.</h1>
+      goals = <div style={{backgroundImage: `url("./lined_paper_@2X.png")`, height: '100%'}}><h1 style={{fontFamily: 'Zeyada', textAlign: 'center', paddingTop: '10%'}}>You have no goals yet. Create some above.</h1></div>
     }
 
     return (
       <div className='GoalContainer'>
         <h1 style={{height: '60px', backgroundImage: `url("./lined_paper_@2X.png")`, margins: '0', textAlign: 'left', paddingLeft: '2%', borderBottom: '1px solid lightGrey', fontFamily:'Cabin Sketch'}}>goals</h1>
         <DateContainer />
-        {goals}
+        <div style={{backgroundImage: `url("./lined_paper_@2X.png")`, height: '100%'}}>
+          {goals}
+        </div>
       </div>
     );
   }
