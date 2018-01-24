@@ -12,10 +12,10 @@ class Log extends Component {
 
     return (
       <div>
-        <p>{(this.props.log.binary_input === true) ?
-          <i class="fa fa-check-square-o fa-2x" aria-hidden="true" style={{color: 'grey'}}></i>
+        <p style={{margin: '0'}}>{(this.props.log.binary_input === true) ?
+          <i class="fa fa-check-square-o fa-2x" aria-hidden="true" style={{color: 'grey', margin: '0'}}></i>
             :
-            <i class="fa fa-square-o fa-2x" aria-hidden="true" style={{color: 'grey'}}></i>
+            <i class="fa fa-square-o fa-2x" aria-hidden="true" style={{color: 'grey', margin: '0'}}></i>
           }
         </p>
       </div>

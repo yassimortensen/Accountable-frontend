@@ -30,13 +30,13 @@ class Goal extends Component {
     // debugger
 
     return (
-      <div className='Goal' style={{borderBottom: '4px solid lightGrey', backgroundImage: `url("./lined_paper_@2X.png")`}}>
+      <div className='Goal' style={{height:'100px', borderBottom: '4px solid lightGrey', backgroundImage: `url("./lined_paper_@2X.png")`}}>
         <div style={{borderRight: '1px solid lightGrey'}}>
-          <h4 onClick={this.handleClick} style={{fontFamily:'Cabin Sketch', fontSize:'36px', display: 'inline'}}>{this.props.goal.name}</h4><br />
-          <div className='w3-button w3-round-xxlarge' style={{display: 'inline', margin: '5%', fontFamily:'Cabin Sketch', fontSize:'36px', color: 'red'}} onClick={this.handleDeleteClick}>
+          <h4 onClick={this.handleClick} style={{fontFamily:'Cabin Sketch', fontSize:'30px', display: 'inline'}}>{this.props.goal.name}</h4><br />
+          <div style={{display: 'inline', fontFamily:'Cabin Sketch', fontSize:'30px', color: 'red', marginRight: '2%'}} onClick={this.handleDeleteClick}>
             X
           </div>
-          <div className='w3-button w3-round-xxlarge' style={{display: 'inline', margin: '5%', fontFamily:'Zeyada', fontSize:'36px', color: 'blue'}} onClick={this.handleLogClick}>
+          <div style={{display: 'inline', fontFamily:'Zeyada', fontSize:'30px', color: 'blue', marginLeft: '2%'}} onClick={this.handleLogClick}>
           add log
           </div>
         </div>

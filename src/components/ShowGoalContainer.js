@@ -43,31 +43,31 @@ class ShowGoalContainer extends Component {
       content =
       <div>
         <h1 style={{margins: '0', textAlign: 'left', paddingLeft: '2%', borderBottom: '1px solid lightGrey'}}>{this.props.selected_goal.name}</h1>
-        <div style={{textAlign:'center'}}>
+        <div style={{textAlign:'center', backgroundColor: '#F7F7F7', height: '100%'}}>
           <button onClick={this.handleMonthClick} className='w3-button w3-blue w3-round-xxlarge' style={{margin: '2%', display:'inline'}}>See Data for Last Month</button>
           <button onClick={this.handleYearClick} className='w3-button w3-blue w3-round-xxlarge' style={{margin: '2%', display:'inline'}}>See Data for Last Year</button>
+          <BinaryGraph />
         </div>
-        <BinaryGraph />
       </div>
     } else if (this.props.selected_goal.binary === false && this.state.monthToggle === false) {
       content =
       <div>
         <h1 style={{margins: '0', textAlign: 'left', paddingLeft: '2%', borderBottom: '1px solid lightGrey'}}>{this.props.selected_goal.name}</h1>
-        <div style={{textAlign:'center'}}>
+        <div style={{textAlign:'center', backgroundColor: '#F7F7F7', height: '100%'}}>
           <button onClick={this.handleMonthClick} className='w3-button w3-blue w3-round-xxlarge' style={{margin: '2%', display:'inline'}}>See Data for Last Month</button>
           <button onClick={this.handleYearClick} className='w3-button w3-blue w3-round-xxlarge' style={{margin: '2%', display:'inline'}}>See Data for Last Year</button>
+          <AmountsGraph />
         </div>
-        <AmountsGraph />
       </div>
     } else if (this.props.selected_goal.binary === false && this.state.monthToggle === true){
       content =
       <div>
         <h1 style={{margins: '0', textAlign: 'left', paddingLeft: '2%', borderBottom: '1px solid lightGrey'}}>{this.props.selected_goal.name}</h1>
-        <div style={{textAlign:'center'}}>
+        <div style={{textAlign:'center', backgroundColor: '#F7F7F7', height: '100%'}}>
           <button onClick={this.handleMonthClick} className='w3-button w3-blue w3-round-xxlarge' style={{margin: '2%', display:'inline'}}>See Data for Last Month</button>
           <button onClick={this.handleYearClick} className='w3-button w3-blue w3-round-xxlarge' style={{margin: '2%', display:'inline'}}>See Data for Last Year</button>
+          <AmountsGraphMonth />
         </div>
-        <AmountsGraphMonth />
       </div>
     }
 

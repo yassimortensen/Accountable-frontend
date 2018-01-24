@@ -12,7 +12,7 @@ class Log extends Component {
 
     return (
       <div style={{display: 'inline-block'}}>
-        <p style={{fontFamily:'Zeyada', fontSize: '36px'}}>{this.props.log.amount_input} {this.props.unit}</p>
+        <p style={{fontFamily:'Zeyada', fontSize: '30px', margin: '0'}}>{this.props.log.amount_input} {this.props.unit}</p>
       </div>
     );
   }
