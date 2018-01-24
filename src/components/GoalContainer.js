@@ -58,7 +58,19 @@ class GoalContainer extends Component {
 
     return (
       <div className='GoalContainer'>
-        <h1 style={{height: '60px', backgroundImage: `url("./lined_paper_@2X.png")`, margins: '0', textAlign: 'left', paddingLeft: '2%', borderBottom: '1px solid lightGrey', fontFamily:'Cabin Sketch'}}>goals</h1>
+        <h1 style={{height: '60px', backgroundImage: `url("./lined_paper_@2X.png")`, margins: '0', textAlign: 'left', paddingLeft: '2%', borderBottom: '1px solid lightGrey', fontFamily:'Cabin Sketch'}}>
+          goals
+          <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./017-shape-1.png" />
+          <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./011-alarm-clock-hand-drawn-outline.png" />
+          <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./008-paint.png" />
+          <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./002-nature.png" />
+          <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./018-social.png" />
+          <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./015-money.png" />
+          <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./016-interface.png" />
+
+
+
+        </h1>
         <DateContainer />
         <div style={{backgroundImage: `url("./lined_paper_@2X.png")`, height: '100%'}}>
           {goals}

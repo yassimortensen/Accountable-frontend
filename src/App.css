@@ -99,8 +99,11 @@ form {
 
 li:hover {
   text-decoration: underline;
-  text-decoration-color: #B8CFF2;
-  -webkit-text-decoration-color: #B8CFF2;
+  text-decoration-color: #1F8CE3;
+}
+
+.hover:hover {
+  background-color: rgba(225, 225, 225, 0.5);
 }
 
 /*.App-logo {
