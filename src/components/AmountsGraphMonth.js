@@ -116,8 +116,8 @@ class AmountsGraphMonth extends Component {
         }],
         xAxes: [{
           scaleLabel:{
-            display: true,
-            fontSize: 24
+            // display: true,
+            // fontSize: 24
           },
           ticks: {
             fontSize: 18,
