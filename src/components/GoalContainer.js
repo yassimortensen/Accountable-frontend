@@ -34,8 +34,14 @@ class GoalContainer extends Component {
     const dates = this.props.dates.map(date => {
       return (moment(date, 'MMMM Do YYYY').subtract(7, 'days').format('MMMM Do YYYY'))
     })
-    console.log(dates)
-    console.log(this.props.goals)
+    this.props.getWeek(dates)
+  }
+
+  handleFutureWeekClick = (event) => {
+    event.preventDefault()
+    const dates = this.props.dates.map(date => {
+      return (moment(date, 'MMMM Do YYYY').add(7, 'days').format('MMMM Do YYYY'))
+    })
     this.props.getWeek(dates)
   }
 
@@ -82,7 +88,7 @@ class GoalContainer extends Component {
         <h1 style={{display:'inline', marginTop: '10px', textAlign:'center', height: '80px', backgroundImage: `url("./lined_paper_@2X.png")`, margins: '0', paddingLeft: '2%', paddingRight: '2%', fontFamily:'Cabin Sketch'}}>
         week of {moment(this.props.dates[0], 'MMMM Do YYYY').format('MMMM Do YYYY')} - {moment(this.props.dates[6], 'MMMM Do YYYY').format('MMMM Do YYYY')}
         </h1>
-        <button style={{display:'inline'}}>Next Week</button>
+        <button style={{display:'inline'}} onClick={this.handleFutureWeekClick}>Next Week</button>
         <DateContainer />
         <div style={{backgroundImage: `url("./lined_paper_@2X.png")`, height: '100%'}}>
           {goals}
