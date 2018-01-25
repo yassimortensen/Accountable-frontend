@@ -23,13 +23,6 @@ class HomePage extends Component {
   // }
 
   render() {
-    const form = () => {
-      if (this.props.selected_goal.binary === true){
-        return (<div style={{backgroundColor: 'rgb(247, 247, 247)'}}><LogFormBinary /></div>)
-      } else {
-        return (<div style={{backgroundColor: 'rgb(247, 247, 247)'}}><LogForm /></div>)
-      }
-    }
 
     return (
       <div className='App'>
@@ -39,7 +32,8 @@ class HomePage extends Component {
         <Switch>
           <Route exact path='/goals' render={() => <GoalContainer />} />
           <Route exact path='/add/goal' render={() => <div style={{backgroundColor: 'rgb(247, 247, 247)'}}><GoalForm /></div>} />
-          <Route exact path='/goal/:id/add/log' render={form} />
+          <Route exact path='/goal/:id/binary/add/log' render={() => <div style={{backgroundColor: 'rgb(247, 247, 247)'}}><LogFormBinary /></div>} />
+          <Route exact path='/goal/:id/add/log' render={() => <div style={{backgroundColor: 'rgb(247, 247, 247)'}}><LogForm /></div>} />
           <Route exact path='/goal/:id/show' render={(props) => <ShowGoalContainer {...props} goal={this.props.selected_goal} />} />
         </Switch>
       </div>

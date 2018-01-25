@@ -4,7 +4,11 @@ export function getGoalDataForLogForm(goalId, history) {
       .then(res => res.json())
       .then(goal =>{
         dispatch({ type: "SELECT_GOAL", goal })
-        history.push(`/goal/${goalId}/add/log`)
+        if (goal.binary === true) {
+          history.push(`/goal/${goalId}/binary/add/log`)
+        } else {
+          history.push(`/goal/${goalId}/add/log`)
+        }
       });
   };
 }
