@@ -20,7 +20,6 @@ class DateContainer extends Component {
 
     return (
       <div className='DateContainer' >
-        <div style={{fontFamily:'Zeyada'}}>see previous Week</div>
         {dateComponents}
       </div>
     );
