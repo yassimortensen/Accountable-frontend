@@ -47,6 +47,6 @@ class Goal extends Component {
       </div>
     );
   }
-} 
+}
 
 export default withRouter(connect(null, { getGoalData, getGoalDataForLogForm, deleteGoal })(Goal))
