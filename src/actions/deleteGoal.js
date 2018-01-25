@@ -12,7 +12,7 @@ export function deleteGoal(goalId, history) {
     return fetch(`http://localhost:3000/api/v1/goals/${goalId}`, options)
     .then(res => res.json())
     .then((allGoals)=>{
-      dispatch({type: "LOGIN", goal: allGoals})
+      dispatch({type: "DELETE_GOAL", goalId: goalId})
     })
   }
 }

@@ -22,6 +22,8 @@ export default function users_reducer(state = {name: '', goals: [], selected_goa
           return goal
         }
       })}
+      case 'DELETE_GOAL':
+      return {...state, goals: state.goals.filter(goal => goal.id !== action.goalId)}
       // return {...state, selected_goal: [...state.selected_goal.logs, action.log]}
     default:
       return state

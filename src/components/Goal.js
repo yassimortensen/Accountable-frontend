@@ -23,7 +23,7 @@ class Goal extends Component {
 
   handleDeleteClick = (event) => {
     console.log('delete!')
-    // this.props.deleteGoal(this.props.goal.id, this.props.history)
+    this.props.deleteGoal(this.props.goal.id, this.props.history)
   }
 
   render() {
@@ -49,4 +49,4 @@ class Goal extends Component {
   }
 }
 
-export default withRouter(connect(null, { getGoalData, getGoalDataForLogForm })(Goal))
+export default withRouter(connect(null, { getGoalData, getGoalDataForLogForm, deleteGoal })(Goal))
