@@ -20,6 +20,7 @@ class DateContainer extends Component {
 
     return (
       <div className='DateContainer' >
+        <div></div>
         {dateComponents}
       </div>
     );
