@@ -1,3 +1,5 @@
+import swal from 'sweetalert';
+
 export function createUser(name, email, password){
   return dispatch => {
     let options = {
@@ -17,7 +19,7 @@ export function createUser(name, email, password){
   }
 }
 
-export function login(email, password){
+export function login(email, password, history){
   return dispatch => {
     let options = {
       method: 'POST',
@@ -30,8 +32,15 @@ export function login(email, password){
     fetch('http://localhost:3000/api/v1/auth', options)
       .then(res => res.json())
       .then(json => {
-        localStorage.setItem('token',json.jwt)
-        dispatch({type: 'LOGIN', user:json})
+        if(json.jwt === undefined){
+          dispatch({ type: 'NOT_USER'})
+          history.push('/')
+          swal("Whoops!", "That email and password does not match.", "error")
+        } else{
+          localStorage.setItem('token',json.jwt)
+          dispatch({type: 'LOGIN', user:json})
+          history.push('/goals')
+        }
       })
   }
 }

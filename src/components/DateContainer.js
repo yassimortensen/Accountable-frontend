@@ -8,13 +8,19 @@ class DateContainer extends Component {
 
   render() {
 
-    const dateComponents = this.props.dates.map((date, index) => (
-      <Date key={index} date={date} />
-    ))
+    let dateComponents;
+
+    if (!this.props.dates) {
+      dateComponents = <div>Loading...</div>
+    } else {
+      dateComponents = this.props.dates.map((date, index) => (
+        <Date key={index} date={date} />
+      ))
+    }
 
     return (
-      <div className='DateContainer' style={{borderBottom: '2px solid red'}}>
-        <div style={{borderRight:'2px solid red'}}></div>
+      <div className='DateContainer' >
+        <div style={{fontFamily:'Zeyada'}}>see previous Week</div>
         {dateComponents}
       </div>
     );

@@ -19,6 +19,16 @@ class GoalContainer extends Component {
   //   }
   // }
 
+  // <h1 style={{color: 'rgba(192, 129, 255, 1)', height: '60px', margins: '0', textAlign: 'left', paddingLeft: '2%', fontFamily:'Cabin Sketch'}}>
+  //   <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./017-shape-1.png" />
+  //   <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./011-alarm-clock-hand-drawn-outline.png" />
+  //   <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./008-paint.png" />
+  //   <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./002-nature.png" />
+  //   <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./018-social.png" />
+  //   <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./015-money.png" />
+  //   <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./016-interface.png" />
+  // </h1>
+
   componentDidMount(){
    if (!this.props.dates.length) {
      // const dates = [
@@ -58,15 +68,6 @@ class GoalContainer extends Component {
 
     return (
       <div className='GoalContainer' style={{backgroundImage: `url("./lined_paper_@2X.png")`}}>
-        <h1 style={{color: 'rgba(192, 129, 255, 1)', height: '60px', margins: '0', textAlign: 'left', paddingLeft: '2%', fontFamily:'Cabin Sketch'}}>
-          <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./017-shape-1.png" />
-          <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./011-alarm-clock-hand-drawn-outline.png" />
-          <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./008-paint.png" />
-          <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./002-nature.png" />
-          <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./018-social.png" />
-          <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./015-money.png" />
-          <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./016-interface.png" />
-        </h1>
         <h1 style={{paddingTop: '10px', textAlign:'center', height: '80px', backgroundImage: `url("./lined_paper_@2X.png")`, margins: '0', paddingLeft: '2%', fontFamily:'Cabin Sketch'}}>
         week of {moment().startOf('week').format('MMMM Do YYYY')} - {moment().startOf('week').add(6, 'days').format('MMMM Do YYYY')}
         </h1>

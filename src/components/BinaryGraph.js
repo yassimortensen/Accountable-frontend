@@ -9,23 +9,14 @@ import {Bar} from "react-chartjs-2";
 class BinaryGraph extends Component {
 
   getAverage = () => {
-    let logData = []
+    let logData = 0
     this.props.selected_goal.logs.forEach(log => {
-      logData.push(log.amount_input)
+      if (log.binary_input === true){
+        logData++
+      }
     })
-    let getSum = function getSum(total, num) {
-        return total + num;
-    }
-    let average = parseFloat((logData.reduce(getSum))/logData.length).toFixed(2)
+    let average = parseFloat(logData/this.props.selected_goal.logs.length*7).toFixed(0)
     return average
-  }
-
-  getScore = () => {
-    let logData = []
-    this.props.selected_goal.logs.forEach(log => {
-      logData.push(log.amount_input)
-    })
-    //UNFINISHED
   }
 
   render() {
@@ -194,14 +185,8 @@ class BinaryGraph extends Component {
             <Bar data={lineData} options={lineOptions}/>
           </div>
           <div style={{textAlign: 'center'}}>
-            <div style={{textAlign: 'center', display:'inline-block', margin: '2%'}}>
-              <h4 style={{display:'inline', margin: '2%'}}>Average</h4><br />
-              <h4 style={{display:'inline', margin: '2%'}}>{this.getAverage()} {this.props.selected_goal.unit}</h4>
-            </div>
-            <div style={{textAlign: 'center', display:'inline-block', margin: '2%'}}>
-              <h4 style={{display:'inline', margin: '2%'}}>Score</h4><br />
-              <h4 style={{display:'inline', margin: '2%'}}>{this.getScore()}</h4>
-            </div>
+            <h4>On average, you {this.props.selected_goal.name.toLowerCase()} {this.getAverage()} days a week.</h4>
+            <h4>Your goal is to {this.props.selected_goal.name.toLowerCase()} {this.props.selected_goal.frequency} days a week</h4>
           </div>
         </div>
       </div>

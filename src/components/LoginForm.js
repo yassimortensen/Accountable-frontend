@@ -50,8 +50,7 @@ class LoginForm extends React.Component{
       this.setState({loginErrorMessage: "Ooops! Please enter a valid email."})
     } else {
       this.setState({loginErrorMessage: ''})
-      this.props.login(this.state.email, this.state.password)
-      this.props.history.push('/goals')
+      this.props.login(this.state.email, this.state.password, this.props.history)
     }
   }
 
@@ -92,8 +91,8 @@ class LoginForm extends React.Component{
       <div style={{margin: '2%', textAlign: 'center', backgroundImage: `url("./lined_paper_@2X.png")`}}>
       <StyleRoot>
         <div style={styles.fadeIn}>
-          <img style={{width:'10%', marginTop: '2%'}} src="https://image.flaticon.com/icons/svg/16/16294.svg" />
-          <h4 style={{fontFamily: 'Mr Bedfort', fontSize:'80px'}}>Accountable</h4>
+          <img style={{width:'10%', marginTop: '2%'}} src="./001-list-verification.png" />
+          <h4 style={{fontFamily: 'Cabin Sketch', fontSize:'80px'}}>Accountable</h4>
         </div>
       </StyleRoot>
         <h5 style={{fontFamily: 'Zeyada', fontSize: '36px'}}>Track your goals to build a more positive life</h5>

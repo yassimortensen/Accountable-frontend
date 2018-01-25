@@ -40,7 +40,7 @@ class Goal extends Component {
           add log
           </div>
           <div style={{display: 'inline'}} onClick={this.handleClick}>
-            <img class='hover' style={{maxHeight: '55px'}} src="./021-line-graphic-sketch.png" />
+            <img class='w3-round hover' style={{maxHeight: '55px'}} src="./021-line-graphic-sketch.png" />
           </div>
         </div>
         <LogContainer goal={this.props.goal}/>

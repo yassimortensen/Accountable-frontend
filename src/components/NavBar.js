@@ -13,7 +13,7 @@ class NavBar extends React.Component{
   render(){
     return(
       <ul style={{color: 'black'}}>
-        <div style={{width: '25%', textAlign: 'left', display: 'inline-block', fontFamily: 'Mr Bedfort', fontSize:'36px'}}>
+        <div style={{width: '25%', textAlign: 'left', display: 'inline-block', fontFamily: 'Cabin Sketch', fontSize:'36px'}}>
           <li><NavLink to='/goals' className="blush" style={{textDecorationColor: '#1F8CE3'}}>Accountable</NavLink></li>
         </div>
         <div style={{width: '50%', textAlign: 'center', display: 'inline-block', fontFamily: 'Zeyada', fontSize:'36px', color: '#1F8CE3'}}>
