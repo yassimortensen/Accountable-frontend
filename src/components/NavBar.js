@@ -26,7 +26,7 @@ class NavBar extends React.Component{
           Logged in as:
           <li style={{color: '#4DBFB6', fontSize: '36px', fontFamily: 'Zeyada', paddingLeft:'2%', textDecorationColor: '#4DBFB6'}}>{this.props.name}</li>
         </div>
-        <div style={{color: 'red', width: '10%', textAlign: 'right', display: 'inline-block', textDecorationColor: 'black', fontFamily: 'Mr Bedfort', fontSize:'24px'}}>
+        <div style={{color: 'red', width: '10%', textAlign: 'right', display: 'inline-block', textDecorationColor: 'black', fontFamily: 'Cabin Sketch', fontSize:'24px'}}>
           <li onClick={this.handleLogout}>Log Out</li>
         </div>
       </ul>
