@@ -29,6 +29,16 @@ class GoalContainer extends Component {
   //   <img style={{maxHeight: '50px', display:"inline", paddingLeft: '10%'}} src="./016-interface.png" />
   // </h1>
 
+  handlePrevWeekClick = (event) => {
+    event.preventDefault()
+    const dates = this.props.dates.map(date => {
+      return (moment(date, 'MMMM Do YYYY').subtract(7, 'days').format('MMMM Do YYYY'))
+    })
+    console.log(dates)
+    console.log(this.props.goals)
+    this.props.getWeek(dates)
+  }
+
   componentDidMount(){
    if (!this.props.dates.length) {
      // const dates = [
@@ -68,9 +78,11 @@ class GoalContainer extends Component {
 
     return (
       <div className='GoalContainer' style={{backgroundImage: `url("./lined_paper_@2X.png")`}}>
-        <h1 style={{paddingTop: '10px', textAlign:'center', height: '80px', backgroundImage: `url("./lined_paper_@2X.png")`, margins: '0', paddingLeft: '2%', fontFamily:'Cabin Sketch'}}>
-        week of {moment().startOf('week').format('MMMM Do YYYY')} - {moment().startOf('week').add(6, 'days').format('MMMM Do YYYY')}
+        <button style={{display:'inline'}} onClick={this.handlePrevWeekClick}>Previous Week</button>
+        <h1 style={{display:'inline', marginTop: '10px', textAlign:'center', height: '80px', backgroundImage: `url("./lined_paper_@2X.png")`, margins: '0', paddingLeft: '2%', paddingRight: '2%', fontFamily:'Cabin Sketch'}}>
+        week of {moment(this.props.dates[0], 'MMMM Do YYYY').format('MMMM Do YYYY')} - {moment(this.props.dates[6], 'MMMM Do YYYY').format('MMMM Do YYYY')}
         </h1>
+        <button style={{display:'inline'}}>Next Week</button>
         <DateContainer />
         <div style={{backgroundImage: `url("./lined_paper_@2X.png")`, height: '100%'}}>
           {goals}
