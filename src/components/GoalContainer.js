@@ -84,11 +84,11 @@ class GoalContainer extends Component {
 
     return (
       <div className='GoalContainer' style={{backgroundImage: `url("./lined_paper_@2X.png")`}}>
-        <button style={{display:'inline'}} onClick={this.handlePrevWeekClick}>Previous Week</button>
+        <img className='w3-round hover' style={{width:'3%', display:'inline'}} onClick={this.handlePrevWeekClick} src="https://image.flaticon.com/icons/svg/59/59589.svg" />
         <h1 style={{display:'inline', marginTop: '10px', textAlign:'center', height: '80px', backgroundImage: `url("./lined_paper_@2X.png")`, margins: '0', paddingLeft: '2%', paddingRight: '2%', fontFamily:'Cabin Sketch'}}>
         week of {moment(this.props.dates[0], 'MMMM Do YYYY').format('MMMM Do YYYY')} - {moment(this.props.dates[6], 'MMMM Do YYYY').format('MMMM Do YYYY')}
         </h1>
-        <button style={{display:'inline'}} onClick={this.handleFutureWeekClick}>Next Week</button>
+        <img className='w3-round hover' style={{width:'3%', display:'inline'}} onClick={this.handleFutureWeekClick} src="https://image.flaticon.com/icons/svg/59/59570.svg" />
         <DateContainer />
         <div style={{backgroundImage: `url("./lined_paper_@2X.png")`, height: '100%'}}>
           {goals}
