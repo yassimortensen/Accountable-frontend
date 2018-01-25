@@ -18,9 +18,8 @@ class LogFormBinary extends React.Component{
     }
   }
 
-  componentWillMount(){
+  componentDidMount(){
     if (!this.props.selected_goal){
-      console.log(this.props.match.params.id)
       this.props.getGoalDataForLogForm(this.props.match.params.id, this.props.history)
     }
   }
