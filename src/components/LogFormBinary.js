@@ -7,7 +7,7 @@ import { getGoalDataForLogForm } from '../actions/getGoalDataForLogForm'
 class LogFormBinary extends React.Component{
   constructor(props){
     super();
-
+ 
     this.state = {
       user_id: 1,
       goal_id: props.match.params.id,
