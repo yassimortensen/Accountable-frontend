@@ -155,14 +155,8 @@ class AmountsGraphMonth extends Component {
             <Line data={lineData} options={lineOptions}/>
           </div>
           <div style={{textAlign: 'center'}}>
-            <div style={{textAlign: 'center', display:'inline-block', margin: '2%'}}>
-              <h4 style={{display:'inline', margin: '2%'}}>Average</h4><br />
-              <h4 style={{display:'inline', margin: '2%'}}>{this.getAverage()} {this.props.selected_goal.unit}</h4>
-            </div>
-            <div style={{textAlign: 'center', display:'inline-block', margin: '2%'}}>
-              <h4 style={{display:'inline', margin: '2%'}}>Score</h4><br />
-              <h4 style={{display:'inline', margin: '2%'}}>{this.getScore()}</h4>
-            </div>
+            <h4>Your average {this.props.selected_goal.name.toLowerCase()} is {this.getAverage()} {this.props.selected_goal.unit}</h4>
+            <h4>Your goal is {this.props.selected_goal.amount} {this.props.selected_goal.unit}</h4>
           </div>
         </div>
       </div>

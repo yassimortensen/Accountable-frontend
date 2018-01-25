@@ -11,7 +11,7 @@ class ShowGoalContainer extends Component {
     super();
 
     this.state = {
-      monthToggle: false
+      monthToggle: true
     }
   }
 
@@ -24,13 +24,13 @@ class ShowGoalContainer extends Component {
   handleMonthClick = () => {
     this.setState({
       monthToggle: true
-    }, console.log(this.state))
+    })
   }
 
   handleYearClick = () => {
     this.setState({
       monthToggle: false
-    }, console.log(this.state))
+    })
   }
 
   render() {
@@ -39,6 +39,16 @@ class ShowGoalContainer extends Component {
 
     if (!this.props.selected_goal){
       content = <div>Loading</div>
+    } else if (this.props.selected_goal.logs.length < 365){
+      content =
+      <div>
+        <h1 style={{margins: '0', textAlign: 'left', paddingLeft: '2%', borderBottom: '1px solid lightGrey', fontFamily:'Cabin Sketch'}}>{this.props.selected_goal.name}</h1>
+        <div style={{textAlign:'center', backgroundColor: '#F7F7F7', height: '100%'}}>
+          <button onClick={this.handleMonthClick} className='w3-button w3-blue w3-round-xxlarge' style={{margin: '2%', display:'inline'}}>See Data for Last Month</button>
+          <button onClick={this.handleYearClick} className='w3-button w3-blue w3-round-xxlarge' style={{margin: '2%', display:'inline'}}>See Data for Last Year</button>
+          <div>{`You need at least a month of data to see`}</div>
+        </div>
+      </div>
     } else if (this.props.selected_goal.binary === true) {
       content =
       <div>
