@@ -32,7 +32,7 @@ class Goal extends Component {
     return (
       <div className='Goal' style={{height:'110px', borderBottom: '4px solid lightGrey', backgroundImage: `url("./lined_paper_@2X.png")`}}>
         <div style={{borderRight: '2px solid red'}}>
-          <h4 style={{color: '#4DBFB6', fontFamily:'Cabin Sketch', fontSize:'30px', display: 'inline'}}>{this.props.goal.name}</h4><br />
+          <h4 class='wiggle-me' style={{color: '#4DBFB6', fontFamily:'Cabin Sketch', fontSize:'30px', display: 'inline'}}>{this.props.goal.name}</h4><br />
           <div class='line' style={{marginLeft: '10%', display: 'inline', fontFamily:'Cabin Sketch', fontSize:'30px', color: 'red'}} onClick={this.handleDeleteClick}>
             x
           </div>
