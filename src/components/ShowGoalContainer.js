@@ -44,18 +44,14 @@ class ShowGoalContainer extends Component {
       <div>
         <h1 style={{margins: '0', textAlign: 'left', paddingLeft: '2%', borderBottom: '1px solid lightGrey', fontFamily:'Cabin Sketch'}}>{this.props.selected_goal.name}</h1>
         <div style={{textAlign:'center', backgroundColor: '#F7F7F7', height: '100%'}}>
-          <button onClick={this.handleMonthClick} className='w3-button w3-blue w3-round-xxlarge' style={{margin: '2%', display:'inline'}}>See Data for Last Month</button>
-          <button onClick={this.handleYearClick} className='w3-button w3-blue w3-round-xxlarge' style={{margin: '2%', display:'inline'}}>See Data for Last Year</button>
-          <div>{`You need at least a month of data to see`}</div>
+          <div style={{lineHeight:'100px', fontFamily:'Cabin Sketch', fontSize: '36px'}}>{`You need at least a month of data to see any analytics. Keep logging!`}</div>
         </div>
       </div>
     } else if (this.props.selected_goal.binary === true) {
       content =
       <div>
         <h1 style={{margins: '0', textAlign: 'left', paddingLeft: '2%', borderBottom: '1px solid lightGrey', fontFamily:'Cabin Sketch'}}>{this.props.selected_goal.name}</h1>
-        <div style={{textAlign:'center', backgroundColor: '#F7F7F7', height: '100%'}}>
-          <button onClick={this.handleMonthClick} className='w3-button w3-blue w3-round-xxlarge' style={{margin: '2%', display:'inline'}}>See Data for Last Month</button>
-          <button onClick={this.handleYearClick} className='w3-button w3-blue w3-round-xxlarge' style={{margin: '2%', display:'inline'}}>See Data for Last Year</button>
+        <div style={{textAlign:'center', backgroundColor: '#F7F7F7', height: '100%', paddingTop: '2%'}}>
           <BinaryGraph />
         </div>
       </div>
