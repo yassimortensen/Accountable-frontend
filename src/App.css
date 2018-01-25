@@ -69,7 +69,7 @@ form {
 
 .LogContainer {
   display: grid;
-  grid-template-columns: repeat(7, 14%) auto;
+  grid-template-columns: repeat(7, 13.9%) auto;
   height: 100px;
   line-height: 100px;
   text-align: center;

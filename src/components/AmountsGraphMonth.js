@@ -28,7 +28,6 @@ class AmountsGraphMonth extends Component {
   }
 
   render() {
-    console.log('month data!!')
 
     const organizedLogs = this.props.selected_goal.logs.sort(
       //sorts all logs by date from least to most recent

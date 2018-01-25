@@ -51,24 +51,6 @@ class BinaryGraph extends Component {
       }
     })
 
-    const averagesByMonth = organizedByMonth.map(month => {
-      let date = new Date()
-      let year = date.getFullYear()
-      let getSum = function getSum(total, num) {
-          return total + num;
-      }
-      let amounts = []
-
-      if (month[year-1]){
-        month[year-1].forEach(log => (amounts.push(log.amount_input)))
-      }
-      // else {
-      //   month[year].forEach(log => (amounts.push(log.amount_input)))
-      // }
-      let average = (amounts.reduce(getSum))/amounts.length
-      return average
-    })
-
     const dataSet = organizedByMonth.map(month => {
       let date = new Date()
       let year = date.getFullYear()

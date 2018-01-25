@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom';
 import { login, createUser } from '../actions/getAuthUser'
-import {Animated} from "react-animated-css";
 import { fadeIn } from 'react-animations'
 import Radium, {StyleRoot} from 'radium'
 
@@ -91,7 +90,7 @@ class LoginForm extends React.Component{
       <div style={{margin: '2%', textAlign: 'center', backgroundImage: `url("./lined_paper_@2X.png")`}}>
       <StyleRoot>
         <div style={styles.fadeIn}>
-          <img style={{width:'10%', marginTop: '2%'}} src="./001-list-verification.png" />
+          <img alt="" style={{width:'10%', marginTop: '2%'}} src="./001-list-verification.png" />
           <h4 style={{fontFamily: 'Cabin Sketch', fontSize:'80px'}}>Accountable</h4>
         </div>
       </StyleRoot>

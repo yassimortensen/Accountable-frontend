@@ -12,12 +12,12 @@ class Log extends Component {
 
     return (
       <div>
-        <p style={{margin: '0'}}>{(this.props.log.binary_input === true) ?
-          <img style={{maxHeight: '40px', margin: '0'}} src="./020-sign.png" />
+        <div style={{margin: '0'}}>{(this.props.log.binary_input === true) ?
+          <img style={{maxHeight: '40px', margin: '0'}} src="./020-sign.png" alt="" />
             :
             <div style={{fontFamily:'Cabin Sketch', fontSize:'40px', paddingTop:'1%', color: '#444546'}}> X </div>
           }
-        </p>
+        </div>
       </div>
     );
   }
