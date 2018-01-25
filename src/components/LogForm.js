@@ -19,7 +19,6 @@ class LogForm extends React.Component{
 
   componentDidMount(){
     if (!this.props.selected_goal){
-      console.log(this.props.match.params.id)
       this.props.getGoalDataForLogForm(this.props.match.params.id, this.props.history)
     }
   }
@@ -66,11 +65,5 @@ const mapStateToProps = ({users_reducer}) => {
     ...users_reducer
   }
 }
-
-// const mapDispatchToProps = (dispatch) => {
-//   return bindActionCreators({
-//       selectUser: selectUser
-//     }, dispatch)
-// }
 
 export default withRouter(connect(mapStateToProps, { postLog, getGoalDataForLogForm })(LogForm))

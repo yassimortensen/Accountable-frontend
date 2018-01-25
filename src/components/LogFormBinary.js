@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { postLog } from '../actions/postLog';
 import { getGoalDataForLogForm } from '../actions/getGoalDataForLogForm'
-// import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 
 class LogFormBinary extends React.Component{
   constructor(props){
@@ -60,7 +59,6 @@ class LogFormBinary extends React.Component{
       )
     }
 
-
     return content
   }
 }
@@ -70,11 +68,5 @@ const mapStateToProps = ({users_reducer}) => {
     ...users_reducer
   }
 }
-
-// const mapDispatchToProps = (dispatch) => {
-//   return bindActionCreators({
-//       selectUser: selectUser
-//     }, dispatch)
-// }
 
 export default withRouter(connect(mapStateToProps, { postLog, getGoalDataForLogForm })(LogFormBinary))
