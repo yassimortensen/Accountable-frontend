@@ -2,24 +2,8 @@ import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from "react-redux";
 import { logout } from '../actions/getAuthUser';
-import Modal, {closeStyle} from 'simple-react-modal';
 
 class NavBar extends React.Component{
-  constructor(){
-    super();
-
-    this.state ={
-      modal: false
-    }
-  }
-
-  show = (event) => {
-    this.setState({modal: true})
-  }
-
-  close = (event) => {
-    this.setState({modal: false})
-  }
 
   handleLogout = (event) => {
     this.props.logout()
