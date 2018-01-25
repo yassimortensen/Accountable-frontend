@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { postLog } from '../actions/postLog';
+import { getGoalDataForLogForm } from '../actions/getGoalDataForLogForm'
 // import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 
 class LogFormBinary extends React.Component{
@@ -14,6 +15,12 @@ class LogFormBinary extends React.Component{
       date: '',
       binary_input: true,
       amount_input: undefined
+    }
+  }
+
+  componentDidMount(){
+    if (!this.props.selected_goal){
+      this.props.getGoalDataForLogForm(this.props.match.params.id, this.props.history)
     }
   }
 
@@ -30,20 +37,19 @@ class LogFormBinary extends React.Component{
 
   render(){
     return(
-      <div style={{margin: '2%'}}>
-        <h4>Goal: {this.props.selected_goal.name}</h4>
-        <p>{this.props.selected_goal.description}</p>
-        <form onSubmit={this.handleSubmit}>
-          Date: <input onChange={this.handleChange} type='date' name='date' value={this.state.date}/>
+      <div style={{padding: '2%', textAlign:'center'}}>
+        <h4>Submit a Log</h4>
+        <h4 style={{fontFamily: 'Cabin Sketch', fontSize: '36px'}}>{this.props.selected_goal.name}</h4>
+        <form className='w3-animate-opacity' style={{margin:'1%', width:'30%', textAlign:'center', display: 'inline-block'}} onSubmit={this.handleSubmit}>
+          <input className='w3-input w3-border w3-round-xlarge' placeholder='Date' onChange={this.handleChange} type='date' name='date' value={this.state.date}/>
           <br />
-          Did you complete your goal?
-          <select onChange={this.handleChange} name="binary_input">
+          <p style={{marginTop: '0', fontSize: '18px'}}>Did you complete your goal?</p>
+          <select className="w3-select w3-border" style={{fontSize:'18px', marginBottom:'10%'}} onChange={this.handleChange} name="binary_input">
             <option value='' defaultValue></option>
             <option value={true}>Yes</option>
             <option value={false}>No</option>
           </select>
-          <br />
-          <input type='submit' />
+          <input className='w3-button w3-blue w3-round-xxlarge' type='submit' />
         </form>
       </div>
     )
@@ -62,4 +68,4 @@ const mapStateToProps = ({users_reducer}) => {
 //     }, dispatch)
 // }
 
-export default withRouter(connect(mapStateToProps, { postLog })(LogFormBinary))
+export default withRouter(connect(mapStateToProps, { postLog, getGoalDataForLogForm })(LogFormBinary))

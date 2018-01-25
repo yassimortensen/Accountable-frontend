@@ -30,15 +30,16 @@ class LogForm extends React.Component{
   render(){
     // console.log(this.state)
     return(
-      <div style={{margin: '2%'}}>
-        <h4>Goal: {this.props.selected_goal.name}</h4>
-        <p>{this.props.selected_goal.description}</p>
-        <form onSubmit={this.handleSubmit}>
-          Date: <input onChange={this.handleChange} type='date' name='date' value={this.state.date}/>
+      <div style={{padding: '2%', textAlign:'center'}}>
+        <h4>Submit a Log</h4>
+        <h4 style={{fontFamily: 'Cabin Sketch', fontSize: '36px'}}>{this.props.selected_goal.name}</h4>
+        <form className='w3-animate-opacity' style={{margin:'1%', width:'30%', textAlign:'center', display: 'inline-block'}} onSubmit={this.handleSubmit}>
+          <input className='w3-input w3-border w3-round-xlarge' placeholder='Date' onChange={this.handleChange} type='date' name='date' value={this.state.date}/>
           <br />
-          Amount: <input onChange={this.handleChange} name='amount_input' type='number' value={this.state.amount_input} />
+          <p style={{marginTop: '0', fontSize: '18px'}}>Please Enter Amount</p>
+          <input className='w3-input w3-border w3-round-xlarge' onChange={this.handleChange} name='amount_input' type='number' value={this.state.amount_input} />
           <br />
-          <input type='submit' />
+          <input className='w3-button w3-blue w3-round-xxlarge' type='submit' value='Submit Log' />
         </form>
       </div>
     )

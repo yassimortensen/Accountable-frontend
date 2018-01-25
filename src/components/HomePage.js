@@ -3,6 +3,7 @@ import '../App.css';
 
 import { connect } from "react-redux";
 import { Route, Switch, withRouter } from 'react-router-dom';
+import { getGoalDataForLogForm } from '../actions/getGoalDataForLogForm'
 
 import NavBar from './NavBar'
 import LogForm from './LogForm'
@@ -24,9 +25,9 @@ class HomePage extends Component {
   render() {
     const form = () => {
       if (this.props.selected_goal.binary === true){
-        return (<LogFormBinary />)
+        return (<div style={{backgroundColor: 'rgb(247, 247, 247)'}}><LogFormBinary /></div>)
       } else {
-        return (<LogForm />)
+        return (<div style={{backgroundColor: 'rgb(247, 247, 247)'}}><LogForm /></div>)
       }
     }
 
@@ -52,4 +53,4 @@ const mapStateToProps = ({users_reducer}) => {
   }
 }
 
-export default withRouter(connect(mapStateToProps, null)(HomePage));
+export default withRouter(connect(mapStateToProps, { getGoalDataForLogForm })(HomePage));
