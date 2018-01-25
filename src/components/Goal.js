@@ -8,6 +8,7 @@ import { getGoalDataForLogForm } from '../actions/getGoalDataForLogForm'
 import { deleteGoal } from '../actions/deleteGoal'
 
 import { connect } from "react-redux";
+import swal from 'sweetalert';
 // import { getUser } from "../actions";
 // import { bindActionCreators } from 'redux';
 
@@ -22,8 +23,23 @@ class Goal extends Component {
   }
 
   handleDeleteClick = (event) => {
-    console.log('delete!')
-    this.props.deleteGoal(this.props.goal.id, this.props.history)
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this goal!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        this.props.deleteGoal(this.props.goal.id, this.props.history)
+        swal("Poof! Your imaginary file has been deleted!", {
+          icon: "success",
+        });
+      } else {
+        swal("Your goal is safe!");
+      }
+    })
   }
 
   render() {
