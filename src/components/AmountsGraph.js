@@ -76,8 +76,8 @@ class AmountsGraph extends Component {
       datasets: [
         {
           data: averagesByMonth,
-          borderColor: 'rgba(141, 175, 254, 0.9)',
-          fill: false,
+          borderColor: 'rgba(77, 191, 182, 0.75)',
+          fill: false
         }
       ]
     };

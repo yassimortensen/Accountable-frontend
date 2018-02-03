@@ -84,7 +84,7 @@ class AmountsGraphMonth extends Component {
       datasets: [
         {
           data: amounts,
-          borderColor: 'rgba(141, 175, 254, 0.9)',
+          borderColor: 'rgba(77, 191, 182, 0.75)',
           fill: false,
         }
       ]

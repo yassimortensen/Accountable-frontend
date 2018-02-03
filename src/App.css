@@ -65,6 +65,11 @@ form {
   height: 100px;
   /*padding: 2%;*/
   text-align: center;
+  border-bottom: 2px solid black;
+}
+
+.Goal:last-child{
+  border-bottom: none;
 }
 
 .LogContainer {

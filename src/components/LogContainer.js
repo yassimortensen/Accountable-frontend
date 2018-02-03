@@ -9,10 +9,10 @@ import { connect } from "react-redux";
 class LogContainer extends Component {
 
   organizeLogs = () => {
-    // const emptyDateComponent = <Log log={{date:'', amount_input:''}}/>;
+    const emptyDateComponent = <Log log={{date:'', amount_input:''}}/>;
     return this.props.dates.map((date, i) => {
       let compareDate = moment(date, 'MMMM Do YYYY').format('YYYY-MM-DD')
-      let foundDateComponent;
+      let foundDateComponent = emptyDateComponent;
 
       this.props.goal.logs.forEach((log, index) => {
         if (log.date === compareDate) {
