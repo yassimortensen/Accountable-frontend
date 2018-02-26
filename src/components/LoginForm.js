@@ -30,7 +30,7 @@ class LoginForm extends React.Component{
     event.preventDefault()
     if(this.state.create_name === '' || this.state.create_email === '' || this.state.create_password === '' ){
       this.setState({errorMessage: "You missed a spot! Don't forget to fill in all of the fields."})
-    } else if (!this.state.create_email.includes("@") || !this.state.create_email.includes(".com")) {
+    } else if (!this.state.create_email.includes("@") || !this.state.create_email.includes(".")) {
       this.setState({errorMessage: "Ooops! Please enter a valid email."})
     } else if (this.state.create_password.length < 6) {
       this.setState({errorMessage: "Ooops! Please choose a password longer than 6 characters."})

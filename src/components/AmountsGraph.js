@@ -36,7 +36,7 @@ class AmountsGraph extends Component {
       }
     )
 
-    const organizedByMonth = new Array()
+    const organizedByMonth = []
     //array of all logs organized by month
 
     const getMonth = organizedLogs.forEach(log => {
@@ -65,9 +65,9 @@ class AmountsGraph extends Component {
       if (month[year-1]){
         month[year-1].forEach(log => (amounts.push(log.amount_input)))
       }
-      // else {
-      //   month[year].forEach(log => (amounts.push(log.amount_input)))
-      // }
+      else {
+        amounts = [0]
+      }
       let average = (amounts.reduce(getSum))/amounts.length
       return average
     })

@@ -34,7 +34,7 @@ class BinaryGraph extends Component {
       }
     )
 
-    const organizedByMonth = new Array()
+    const organizedByMonth = []
 
     const getMonth = organizedLogs.forEach(log => {
       let date = new Date(log.date)

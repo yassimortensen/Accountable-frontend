@@ -42,7 +42,7 @@ class AmountsGraphMonth extends Component {
       }
     )
 
-    const organizedByMonth = new Array()
+    const organizedByMonth = []
     //array of all logs organized by month
 
     const getMonth = organizedLogs.forEach(log => {
