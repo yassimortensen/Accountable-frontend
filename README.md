@@ -29,5 +29,4 @@ The Accountable API is seeded with default data for an existing user.
 
 
 ## LICENSE ##
-- Styled with pure CSS
-- Blush is released under the WeWork License.
+- Accountable is released under the WeWork License.
